@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Edolf Pharmacy – Advancing Healthcare for All</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--navy:#1a365d;--blue:#2563eb;--orange:#f59e0b;--orange-dark:#d97706;--cream:#fef7ed;--white:#ffffff;--gray-50:#f9fafb;--gray-100:#f3f4f6;--gray-600:#4b5563;--gray-800:#1f2937}
+body{font-family:'Inter',system-ui,sans-serif;color:var(--gray-800);overflow-x:hidden}
+a{text-decoration:none;color:inherit}
+nav{position:fixed;top:0;width:100%;z-index:1000;background:var(--white);box-shadow:0 1px 3px rgba(0,0,0,.08);transition:all .3s}
+nav.scrolled{box-shadow:0 4px 20px rgba(0,0,0,.1)}
+.nav-inner{max-width:1280px;margin:0 auto;padding:0 40px;display:flex;align-items:center;justify-content:space-between;height:72px}
+.logo{display:flex;align-items:center;gap:10px;font-size:1.6rem;font-weight:800;letter-spacing:-.02em}
+.logo .e{color:var(--navy)}
+.logo .dot{color:var(--orange);font-size:2rem}
+.nav-links{display:flex;gap:28px;align-items:center}
+.nav-links a{font-size:.875rem;font-weight:500;color:var(--gray-600);transition:color .2s;position:relative}
+.nav-links a:hover{color:var(--navy)}
+.nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:2px;background:var(--orange);transition:width .3s}
+.nav-links a:hover::after{width:100%}
+.nav-cta{background:var(--navy);color:var(--white)!important;padding:10px 24px;border-radius:6px;font-weight:600;transition:background .2s}
+.nav-cta:hover{background:var(--blue)}
+.nav-cta::after{display:none!important}
+.hero{margin-top:72px;position:relative;height:85vh;min-height:600px;overflow:hidden}
+.hero-slides{display:flex;width:300%;height:100%;transition:transform 1s ease}
+.hero-slide{width:33.333%;height:100%;position:relative;display:flex;align-items:center}
+.hero-slide::before{content:'';position:absolute;inset:0;z-index:1}
+.slide-1{background:linear-gradient(135deg,var(--navy) 0%,#2d4a7a 50%,var(--blue) 100%)}
+.slide-2{background:linear-gradient(135deg,#f97316 0%,var(--orange) 50%,#fbbf24 100%)}
+.slide-3{background:linear-gradient(135deg,var(--navy) 0%,#1e3a5f 40%,#f97316 100%)}
+.hero-content{position:relative;z-index:2;max-width:1280px;margin:0 auto;padding:0 40px;width:100%;color:var(--white)}
+.hero-content h1{font-size:clamp(2.5rem,5vw,4rem);font-weight:800;line-height:1.1;margin-bottom:20px;max-width:700px}
+.hero-content p{font-size:1.15rem;font-weight:300;max-width:550px;margin-bottom:32px;opacity:.9;line-height:1.7}
+.hero-btns{display:flex;gap:16px;flex-wrap:wrap}
+.btn{padding:14px 32px;border-radius:6px;font-size:.95rem;font-weight:600;cursor:pointer;border:none;transition:all .25s;display:inline-flex;align-items:center;gap:8px}
+.btn-white{background:var(--white);color:var(--navy)}
+.btn-white:hover{background:var(--cream);transform:translateY(-2px);box-shadow:0 8px 25px rgba(0,0,0,.15)}
+.btn-outline{background:transparent;color:var(--white);border:2px solid rgba(255,255,255,.4)}
+.btn-outline:hover{border-color:var(--white);background:rgba(255,255,255,.1)}
+.hero-dots{position:absolute;bottom:30px;left:50%;transform:translateX(-50%);z-index:3;display:flex;gap:10px}
+.hero-dots span{width:12px;height:12px;border-radius:50%;background:rgba(255,255,255,.3);cursor:pointer;transition:all .3s}
+.hero-dots span.active{background:var(--orange);width:36px;border-radius:6px}
+.stats-bar{background:var(--navy);padding:0}
+.stats-inner{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr)}
+.stat-item{padding:40px;text-align:center;border-right:1px solid rgba(255,255,255,.1);color:var(--white)}
+.stat-item:last-child{border:none}
+.stat-num{font-size:2.5rem;font-weight:800;color:var(--orange);margin-bottom:6px}
+.stat-label{font-size:.85rem;font-weight:400;opacity:.7;text-transform:uppercase;letter-spacing:.1em}
+.about{padding:100px 40px;max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+.about-img{width:100%;height:450px;background:linear-gradient(135deg,var(--cream),#e0f2fe);border-radius:16px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+.about-img-badge{position:absolute;bottom:24px;right:24px;background:var(--orange);color:var(--white);padding:12px 20px;border-radius:8px;font-weight:700;font-size:.9rem}
+.about h2{font-size:2.5rem;font-weight:800;color:var(--navy);margin-bottom:20px;line-height:1.2}
+.about h2 span{color:var(--orange)}
+.about p{color:var(--gray-600);line-height:1.8;margin-bottom:16px;font-size:1.05rem}
+.btn-navy{background:var(--navy);color:var(--white);margin-top:12px}
+.btn-navy:hover{background:var(--blue);transform:translateY(-2px)}
+.offerings{background:var(--gray-50);padding:100px 40px}
+.section-header{text-align:center;max-width:600px;margin:0 auto 60px}
+.section-header h2{font-size:2.2rem;font-weight:800;color:var(--navy);margin-bottom:12px}
+.section-header .accent-line{width:60px;height:4px;background:var(--orange);margin:0 auto 16px;border-radius:2px}
+.section-header p{color:var(--gray-600);font-size:1rem}
+.offerings-grid{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:30px}
+.offer-card{background:var(--white);border-radius:12px;padding:40px 32px;transition:all .3s;border:1px solid transparent;position:relative;overflow:hidden}
+.offer-card:hover{transform:translateY(-6px);box-shadow:0 20px 40px rgba(0,0,0,.08);border-color:rgba(245,158,11,.2)}
+.offer-icon{width:56px;height:56px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.5rem;margin-bottom:20px}
+.offer-icon.blue{background:#dbeafe;color:var(--blue)}
+.offer-icon.orange{background:#fef3c7;color:var(--orange-dark)}
+.offer-icon.green{background:#dcfce7;color:#16a34a}
+.offer-card h3{font-size:1.2rem;font-weight:700;color:var(--navy);margin-bottom:10px}
+.offer-card p{color:var(--gray-600);font-size:.9rem;line-height:1.7}
+.presence{padding:100px 40px;background:var(--navy);color:var(--white);text-align:center}
+.presence h2{font-size:2.5rem;font-weight:800;margin-bottom:12px}
+.presence .accent-line{width:60px;height:4px;background:var(--orange);margin:0 auto 20px;border-radius:2px}
+.presence p{max-width:700px;margin:0 auto 50px;opacity:.8;font-size:1.05rem;line-height:1.7}
+.presence-grid{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.presence-item{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:32px 20px;transition:all .3s}
+.presence-item:hover{background:rgba(255,255,255,.1);transform:translateY(-4px)}
+.presence-item .flag{font-size:2rem;margin-bottom:12px}
+.presence-item h4{font-size:1rem;font-weight:600;margin-bottom:4px}
+.presence-item span{font-size:.8rem;opacity:.6}
+.news{padding:100px 40px;background:var(--cream)}
+.news-grid{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:30px}
+.news-card{background:var(--white);border-radius:12px;overflow:hidden;transition:all .3s}
+.news-card:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(0,0,0,.08)}
+.news-img{height:200px;display:flex;align-items:center;justify-content:center;font-size:3rem}
+.news-img.n1{background:linear-gradient(135deg,#dbeafe,#bfdbfe)}
+.news-img.n2{background:linear-gradient(135deg,#fef3c7,#fde68a)}
+.news-img.n3{background:linear-gradient(135deg,#dcfce7,#bbf7d0)}
+.news-body{padding:24px}
+.news-date{font-size:.75rem;color:var(--orange);font-weight:600;text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px}
+.news-body h3{font-size:1.1rem;font-weight:700;color:var(--navy);margin-bottom:8px;line-height:1.4}
+.news-body p{font-size:.85rem;color:var(--gray-600);line-height:1.6}
+.cta{padding:80px 40px;background:linear-gradient(135deg,var(--orange),#f97316);text-align:center;color:var(--white)}
+.cta h2{font-size:2.2rem;font-weight:800;margin-bottom:12px}
+.cta p{font-size:1.1rem;opacity:.9;margin-bottom:28px;max-width:500px;margin-left:auto;margin-right:auto}
+.btn-dark{background:var(--navy);color:var(--white)}
+.btn-dark:hover{background:var(--gray-800);transform:translateY(-2px)}
+footer{background:var(--gray-800);color:rgba(255,255,255,.6);padding:60px 40px 30px}
+.footer-inner{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px}
+.footer-brand h3{font-size:1.4rem;font-weight:800;color:var(--white);margin-bottom:12px}
+.footer-brand h3 span{color:var(--orange)}
+.footer-brand p{font-size:.85rem;line-height:1.7;max-width:280px}
+.footer-col h4{color:var(--white);font-size:.85rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;margin-bottom:16px}
+.footer-col a{display:block;font-size:.85rem;margin-bottom:10px;transition:color .2s}
+.footer-col a:hover{color:var(--orange)}
+.footer-bottom{max-width:1280px;margin:40px auto 0;padding-top:24px;border-top:1px solid rgba(255,255,255,.1);display:flex;justify-content:space-between;font-size:.8rem}
+@keyframes fadeUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+.fade-up{opacity:0;transform:translateY(30px);transition:all .6s ease}
+.fade-up.visible{opacity:1;transform:translateY(0)}
+@media(max-width:768px){.nav-links{display:none}.hero{height:60vh;min-height:400px}.hero-content h1{font-size:2rem}.stats-inner{grid-template-columns:repeat(2,1fr)}.about{grid-template-columns:1fr;gap:40px;padding:60px 20px}.offerings-grid,.news-grid{grid-template-columns:1fr}.presence-grid{grid-template-columns:repeat(2,1fr)}.footer-inner{grid-template-columns:1fr 1fr}}
+</style>
+</head>
+<body>
+<nav id="navbar"><div class="nav-inner"><a href="#" class="logo"><span class="e">Edolf</span><span class="dot">.</span>Pharmacy</a><div class="nav-links"><a href="#about">About Us</a><a href="#offerings">Our Offerings</a><a href="#presence">Global Presence</a><a href="#investors">Investors</a><a href="#careers">Careers</a><a href="#news">Media</a><a href="#contact" class="nav-cta">Contact Us</a></div></div></nav>
+<section class="hero"><div class="hero-slides" id="heroSlides"><div class="hero-slide slide-1"><div class="hero-content"><h1>Advancing Healthcare.<br>Empowering Lives.</h1><p>At Edolf Pharmacy, we're committed to making quality medicines accessible to everyone, everywhere. Caring for life since 2024.</p><div class="hero-btns"><a href="#about" class="btn btn-white">Discover Our Story</a><a href="#offerings" class="btn btn-outline">Our Offerings</a></div></div></div><div class="hero-slide slide-2"><div class="hero-content"><h1>Innovation in Every Molecule.</h1><p>Our R&amp;D facilities drive breakthrough formulations across specialty, generic, and OTC medicines for patients worldwide.</p><div class="hero-btns"><a href="#offerings" class="btn btn-white">Explore Products</a></div></div></div><div class="hero-slide slide-3"><div class="hero-content"><h1>From India to the World.</h1><p>With manufacturing facilities across 3 continents and distribution in 50+ countries, Edolf brings healthcare to every corner.</p><div class="hero-btns"><a href="#presence" class="btn btn-white">Global Presence</a></div></div></div></div><div class="hero-dots" id="heroDots"><span class="active" onclick="goSlide(0)"></span><span onclick="goSlide(1)"></span><span onclick="goSlide(2)"></span></div></section>
+<section class="stats-bar"><div class="stats-inner"><div class="stat-item"><div class="stat-num" data-count="50">0</div><div class="stat-label">Countries Served</div></div><div class="stat-item"><div class="stat-num" data-count="1200">0</div><div class="stat-label">Products Portfolio</div></div><div class="stat-item"><div class="stat-num" data-count="8">0</div><div class="stat-label">Manufacturing Plants</div></div><div class="stat-item"><div class="stat-num" data-count="5000">0</div><div class="stat-label">Team Members</div></div></div></section>
+<section class="about" id="about"><div class="about-img fade-up"><div class="about-img-badge">Est. 2024</div></div><div class="fade-up"><h2>Caring for Life,<br><span>One Patient at a Time</span></h2><p>Edolf Pharmacy is a rapidly growing pharmaceutical company dedicated to developing, manufacturing, and distributing high-quality medicines globally.</p><p>With a diverse portfolio spanning specialty medicines, generics, and consumer healthcare products, we serve millions of patients across the world.</p><a href="#" class="btn btn-navy">Know More</a></div></section>
+<section class="offerings" id="offerings"><div class="section-header fade-up"><div class="accent-line"></div><h2>Our Offerings</h2><p>Comprehensive pharmaceutical solutions across therapeutic areas</p></div><div class="offerings-grid"><div class="offer-card fade-up"><div class="offer-icon blue">&#x1F48A;</div><h3>Specialty Medicines</h3><p>Advanced therapies in oncology, dermatology, ophthalmology, and neurology.</p></div><div class="offer-card fade-up"><div class="offer-icon orange">&#x1F9EC;</div><h3>Generic Pharmaceuticals</h3><p>High-quality, affordable generics that make essential medicines accessible.</p></div><div class="offer-card fade-up"><div class="offer-icon green">&#x1F33F;</div><h3>Consumer Healthcare</h3><p>OTC products and wellness solutions for everyday health needs.</p></div><div class="offer-card fade-up"><div class="offer-icon blue">&#x1F52C;</div><h3>R&amp;D Innovation</h3><p>Cutting-edge research developing next-generation formulations.</p></div><div class="offer-card fade-up"><div class="offer-icon orange">&#x1F3ED;</div><h3>Contract Manufacturing</h3><p>USFDA and WHO-GMP approved facilities offering end-to-end solutions.</p></div><div class="offer-card fade-up"><div class="offer-icon green">&#x1F91D;</div><h3>API &amp; Intermediates</h3><p>Vertically integrated supply chain producing APIs for global partners.</p></div></div></section>
+<section class="presence" id="presence"><h2 class="fade-up">Global Presence</h2><div class="accent-line"></div><p class="fade-up">Delivering healthcare solutions across continents with manufacturing excellence.</p><div class="presence-grid"><div class="presence-item fade-up"><div class="flag">&#x1F1EE;&#x1F1F3;</div><h4>India</h4><span>HQ - 4 Plants</span></div><div class="presence-item fade-up"><div class="flag">&#x1F1FA;&#x1F1F8;</div><h4>United States</h4><span>2 Facilities</span></div><div class="presence-item fade-up"><div class="flag">&#x1F1EC;&#x1F1E7;</div><h4>United Kingdom</h4><span>Distribution Hub</span></div><div class="presence-item fade-up"><div class="flag">&#x1F1E7;&#x1F1F7;</div><h4>Brazil</h4><span>LATAM Operations</span></div><div class="presence-item fade-up"><div class="flag">&#x1F1FF;&#x1F1E6;</div><h4>South Africa</h4><span>Africa Regional</span></div><div class="presence-item fade-up"><div class="flag">&#x1F1E6;&#x1F1FA;</div><h4>Australia</h4><span>APAC Hub</span></div><div class="presence-item fade-up"><div class="flag">&#x1F1E9;&#x1F1EA;</div><h4>Germany</h4><span>EU Operations</span></div><div class="presence-item fade-up"><div class="flag">&#x1F1EF;&#x1F1F5;</div><h4>Japan</h4><span>Specialty Focus</span></div></div></section>
+<section class="news" id="news"><div class="section-header fade-up"><div class="accent-line"></div><h2>Media Centre</h2><p>Latest updates and announcements from Edolf Pharmacy</p></div><div class="news-grid"><div class="news-card fade-up"><div class="news-img n1">&#x1F4F0;</div><div class="news-body"><div class="news-date">May 2026</div><h3>Edolf Pharmacy Launches New Oncology Division</h3><p>Expanding our specialty portfolio with breakthrough cancer therapies.</p></div></div><div class="news-card fade-up"><div class="news-img n2">&#x1F3C6;</div><div class="news-body"><div class="news-date">April 2026</div><h3>Ranked Among Top 50 Pharma Companies in Asia</h3><p>Industry recognition for rapid growth and innovation pipeline.</p></div></div><div class="news-card fade-up"><div class="news-img n3">&#x1F30D;</div><div class="news-body"><div class="news-date">March 2026</div><h3>New Manufacturing Facility in Gujarat Inaugurated</h3><p>WHO-GMP certified plant adds capacity for 2 billion tablets annually.</p></div></div></div></section>
+<section class="cta" id="contact"><h2>Partner With Edolf Pharmacy</h2><p>Whether you're a healthcare professional, distributor, or investor - let's create healthier futures together.</p><a href="mailto:info@edolfpharmacy.com" class="btn btn-dark">Get In Touch</a></section>
+<footer><div class="footer-inner"><div class="footer-brand"><h3>Edolf<span>.</span>Pharmacy</h3><p>Advancing healthcare through innovation, accessibility, and unwavering commitment to quality.</p></div><div class="footer-col"><h4>Company</h4><a href="#">About Us</a><a href="#">Leadership</a><a href="#">Sustainability</a><a href="#">CSR Initiatives</a><a href="#">Careers</a></div><div class="footer-col"><h4>Offerings</h4><a href="#">Specialty Medicines</a><a href="#">Generics</a><a href="#">Consumer Health</a><a href="#">API &amp; Intermediates</a><a href="#">R&amp;D Pipeline</a></div><div class="footer-col"><h4>Connect</h4><a href="#">Investor Relations</a><a href="#">Media Centre</a><a href="#">Contact Us</a><a href="#">Compliance</a><a href="#">Privacy Policy</a></div></div><div class="footer-bottom"><span>&copy; 2026 Edolf Pharmacy Ltd. All rights reserved.</span><span>Made with care for a healthier world.</span></div></footer>
+<script>
+let current=0;const slides=document.getElementById('heroSlides'),dots=document.querySelectorAll('#heroDots span');function goSlide(n){current=n;slides.style.transform='translateX(-'+n*33.333+'%)';dots.forEach((d,i)=>{d.classList.toggle('active',i===n)})}setInterval(()=>{goSlide((current+1)%3)},5000);window.addEventListener('scroll',()=>{document.getElementById('navbar').classList.toggle('scrolled',window.scrollY>50)});const counters=document.querySelectorAll('.stat-num');const observed=new Set();const cObs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting&&!observed.has(e.target)){observed.add(e.target);const t=+e.target.dataset.count;let c=0;const iv=setInterval(()=>{c+=Math.ceil(t/60);if(c>=t){c=t;clearInterval(iv)}e.target.textContent=c.toLocaleString()+'+'},33)}})},{threshold:.5});counters.forEach(c=>cObs.observe(c));const fObs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')})},{threshold:.15});document.querySelectorAll('.fade-up').forEach(el=>fObs.observe(el));document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener('click',e=>{e.preventDefault();const t=document.querySelector(a.getAttribute('href'));if(t)t.scrollIntoView({behavior:'smooth',block:'start'})})});
+</script>
+</body>
+</html>
