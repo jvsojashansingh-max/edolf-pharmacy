@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Edolf Pharmacy – Caring for Life. From Care to Cure.</title>
-<meta name="description" content="Edolf Pharmacy is a global pharmaceutical company advancing specialty medicines, generics, and consumer healthcare across 60+ countries.">
+<meta name="description" content="Edolf Pharmacy is a global pharmaceutical company advancing specialty medicines, generics, and consumer healthcare across 70+ countries.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
@@ -159,6 +159,39 @@ a{text-decoration:none;color:inherit}
 .presence-card h4{font-size:.95rem;font-weight:700;color:var(--navy);margin-bottom:4px}
 .presence-card span{font-size:.75rem;color:var(--gray-500);font-weight:500}
 
+/* ===== SUSTAINABILITY (Cipla-inspired pillars) ===== */
+.sustain-section{background:var(--cream);padding:60px 40px;flex-direction:column}
+.sustain-inner{max-width:1100px;width:100%}
+.sustain-header{text-align:center;margin-bottom:50px}
+.sustain-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.sustain-card{background:var(--white);border-radius:20px;padding:40px 32px;border:1px solid var(--gray-200);transition:all .5s cubic-bezier(.4,0,.2,1);position:relative;overflow:hidden}
+.sustain-card::after{content:'';position:absolute;left:0;top:0;bottom:0;width:4px;background:linear-gradient(to bottom,var(--orange),var(--orange-dark));transform:scaleY(0);transform-origin:top;transition:transform .5s}
+.sustain-card:hover{transform:translateY(-6px);box-shadow:0 24px 48px rgba(26,54,93,.08);border-color:rgba(245,158,11,.2)}
+.sustain-card:hover::after{transform:scaleY(1)}
+.sustain-icon{width:54px;height:54px;border-radius:14px;background:linear-gradient(135deg,var(--orange),var(--orange-dark));display:flex;align-items:center;justify-content:center;font-size:1.6rem;margin-bottom:22px;color:#fff}
+.sustain-card h3{font-size:1.2rem;font-weight:700;color:var(--navy);margin-bottom:12px;letter-spacing:-.01em}
+.sustain-card p{font-size:.9rem;color:var(--gray-500);line-height:1.75;margin-bottom:18px}
+.sustain-stat{font-size:1.1rem;font-weight:700;color:var(--orange-dark);letter-spacing:-.01em}
+
+/* ===== MEDIA CENTRE (Sun Pharma-inspired news cards) ===== */
+.media-section{background:var(--white);padding:60px 40px;flex-direction:column}
+.media-inner{max-width:1200px;width:100%}
+.media-header{text-align:center;margin-bottom:50px}
+.media-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.media-card{background:var(--off-white);border:1px solid var(--gray-200);border-radius:18px;padding:0;overflow:hidden;transition:all .45s cubic-bezier(.4,0,.2,1);cursor:default;display:flex;flex-direction:column}
+.media-card:hover{transform:translateY(-5px);box-shadow:0 18px 40px rgba(0,0,0,.06);border-color:rgba(245,158,11,.25)}
+.media-thumb{height:140px;background:linear-gradient(135deg,var(--navy),var(--navy-light));position:relative;overflow:hidden;display:flex;align-items:flex-end;padding:20px}
+.media-thumb::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at top right,rgba(245,158,11,.18),transparent 60%)}
+.media-thumb-2{background:linear-gradient(135deg,#7c2d12,var(--orange-dark))}
+.media-thumb-3{background:linear-gradient(135deg,#0f2647,#3b82f6)}
+.media-tag{position:relative;font-size:.62rem;font-weight:700;text-transform:uppercase;letter-spacing:.16em;color:#fff;background:rgba(0,0,0,.25);padding:6px 12px;border-radius:50px;backdrop-filter:blur(10px)}
+.media-body{padding:24px 26px 28px;flex:1;display:flex;flex-direction:column}
+.media-date{font-size:.72rem;font-weight:600;color:var(--gray-400);letter-spacing:.06em;margin-bottom:10px;text-transform:uppercase}
+.media-card h3{font-size:1.02rem;font-weight:700;color:var(--navy);line-height:1.35;margin-bottom:12px;letter-spacing:-.01em}
+.media-card p{font-size:.84rem;color:var(--gray-500);line-height:1.65;margin-bottom:18px;flex:1}
+.media-link{font-size:.78rem;font-weight:600;color:var(--orange-dark);display:inline-flex;align-items:center;gap:6px;transition:gap .3s}
+.media-card:hover .media-link{gap:10px}
+
 /* ===== CONTACT/CTA ===== */
 .cta-section{background:var(--white);padding:0 40px;flex-direction:column;text-align:center}
 .cta-inner{max-width:700px}
@@ -201,6 +234,8 @@ a{text-decoration:none;color:inherit}
   .pipeline-cards{grid-template-columns:repeat(2,1fr)}
   .presence-grid{grid-template-columns:repeat(2,1fr)}
   .offerings-grid{grid-template-columns:repeat(2,1fr)}
+  .sustain-grid{grid-template-columns:1fr}
+  .media-grid{grid-template-columns:repeat(2,1fr)}
   .footer-inner{grid-template-columns:1fr 1fr;gap:32px}
 }
 @media(max-width:768px){
@@ -236,6 +271,15 @@ a{text-decoration:none;color:inherit}
   .presence-section{padding:40px 24px}
   .presence-grid{grid-template-columns:repeat(2,1fr);gap:12px}
 
+  .sustain-section{padding:40px 24px}
+  .sustain-grid{grid-template-columns:1fr;gap:14px}
+  .sustain-card{padding:30px 24px}
+
+  .media-section{padding:40px 24px}
+  .media-grid{grid-template-columns:1fr;gap:14px}
+  .media-thumb{height:110px}
+  .media-body{padding:20px 22px 24px}
+
   .cta-section{padding:0 24px}
   .cta-links{gap:20px}
 
@@ -261,6 +305,8 @@ a{text-decoration:none;color:inherit}
     <a href="#offerings">Offerings</a>
     <a href="#pipeline">Pipeline</a>
     <a href="#presence">Global</a>
+    <a href="#sustainability">Sustainability</a>
+    <a href="#media">Media</a>
     <a href="#contact">Contact</a>
   </div>
   <div class="hamburger" id="hamburger" aria-label="Menu">
@@ -275,6 +321,8 @@ a{text-decoration:none;color:inherit}
   <a href="#offerings" class="mobile-link">Offerings</a>
   <a href="#pipeline" class="mobile-link">Pipeline</a>
   <a href="#presence" class="mobile-link">Global Presence</a>
+  <a href="#sustainability" class="mobile-link">Sustainability</a>
+  <a href="#media" class="mobile-link">Media Centre</a>
   <a href="#contact" class="mobile-link">Contact</a>
 </div>
 
@@ -286,6 +334,8 @@ a{text-decoration:none;color:inherit}
   <div class="dot" data-section="offerings" data-label="Offerings"></div>
   <div class="dot" data-section="pipeline" data-label="Pipeline"></div>
   <div class="dot" data-section="presence" data-label="Global"></div>
+  <div class="dot" data-section="sustainability" data-label="Sustainability"></div>
+  <div class="dot" data-section="media" data-label="Media"></div>
   <div class="dot" data-section="contact" data-label="Contact"></div>
 </div>
 
@@ -294,12 +344,12 @@ a{text-decoration:none;color:inherit}
   <div class="orb orb-1"></div>
   <div class="orb orb-2"></div>
   <div class="hero-inner">
-    <div class="hero-eyebrow">Caring for Life</div>
+    <div class="hero-eyebrow">Caring for Life · FY26</div>
     <h1>From Care<br>to <em>Cure.</em></h1>
-    <p class="hero-sub">Developing and delivering high-quality medicines that improve patient outcomes across 65+ countries. From primary care essentials to breakthrough specialty therapies.</p>
+    <p class="hero-sub">Developing and delivering high-quality medicines that improve patient outcomes across 70+ countries. From primary care essentials to breakthrough specialty therapies in oncology, dermatology, and metabolic health.</p>
     <div class="hero-cta">
       <a href="#about" class="btn btn-primary">Discover Our Story</a>
-      <a href="#pipeline" class="btn btn-ghost">Explore Pipeline</a>
+      <a href="#pipeline" class="btn btn-ghost">Explore Pipeline →</a>
     </div>
   </div>
   <div class="scroll-hint">
@@ -315,29 +365,29 @@ a{text-decoration:none;color:inherit}
   </div>
   <div class="stats-grid">
     <div class="stat-card reveal">
-      <div class="stat-number" data-target="65">0<span>+</span></div>
+      <div class="stat-number" data-target="70">0<span>+</span></div>
       <div class="stat-label">Countries Served</div>
     </div>
     <div class="stat-card reveal reveal-delay-1">
-      <div class="stat-number" data-target="1600">0<span>+</span></div>
+      <div class="stat-number" data-target="1750">0<span>+</span></div>
       <div class="stat-label">Products Portfolio</div>
     </div>
     <div class="stat-card reveal reveal-delay-2">
-      <div class="stat-number" data-target="13">0</div>
+      <div class="stat-number" data-target="14">0</div>
       <div class="stat-label">Manufacturing Sites</div>
     </div>
   </div>
   <div class="stats-grid-2">
     <div class="stat-card reveal">
-      <div class="stat-number" data-target="7800">0<span>+</span></div>
+      <div class="stat-number" data-target="8200">0<span>+</span></div>
       <div class="stat-label">Team Members</div>
     </div>
     <div class="stat-card reveal reveal-delay-1">
-      <div class="stat-number">$2.1<span>B</span></div>
+      <div class="stat-number">$2.4<span>B</span></div>
       <div class="stat-label">FY26 Revenue</div>
     </div>
     <div class="stat-card reveal reveal-delay-2">
-      <div class="stat-number" data-target="10">0<span>%</span></div>
+      <div class="stat-number" data-target="11">0<span>%</span></div>
       <div class="stat-label">Revenue in R&amp;D</div>
     </div>
   </div>
@@ -352,9 +402,10 @@ a{text-decoration:none;color:inherit}
     <div class="about-pills reveal">
       <div class="about-pill"><span class="pill-icon"></span>USFDA Approved</div>
       <div class="about-pill"><span class="pill-icon"></span>WHO-GMP Certified</div>
-      <div class="about-pill"><span class="pill-icon"></span>13 Manufacturing Sites</div>
+      <div class="about-pill"><span class="pill-icon"></span>14 Manufacturing Sites</div>
       <div class="about-pill"><span class="pill-icon"></span>EMA Compliant</div>
-      <div class="about-pill"><span class="pill-icon"></span>5.2M+ Patients Reached</div>
+      <div class="about-pill"><span class="pill-icon"></span>6.1M+ Patients Reached</div>
+      <div class="about-pill"><span class="pill-icon"></span>ISO 14001 &amp; 45001</div>
     </div>
   </div>
 </section>
@@ -461,6 +512,75 @@ a{text-decoration:none;color:inherit}
   </div>
 </section>
 
+<!-- ===== SUSTAINABILITY ===== -->
+<section class="section sustain-section" id="sustainability">
+  <div class="sustain-inner">
+    <div class="sustain-header">
+      <div class="section-tag reveal">Sustainability</div>
+      <h2 class="section-title reveal">Standing Strong.<br>Caring for <em>Tomorrow.</em></h2>
+    </div>
+    <div class="sustain-grid">
+      <div class="sustain-card reveal">
+        <div class="sustain-icon">🌱</div>
+        <h3>Environmental Stewardship</h3>
+        <p>Driving our operations toward net-zero with renewable energy, water-positive sites, and zero-waste-to-landfill manufacturing.</p>
+        <div class="sustain-stat">62% renewables · 14 ZLD plants</div>
+      </div>
+      <div class="sustain-card reveal reveal-delay-1">
+        <div class="sustain-icon">🎓</div>
+        <h3>Skilling &amp; Inclusion</h3>
+        <p>Empowering communities through pharmacy training, scholarships, and STEM programmes for underrepresented youth across our markets.</p>
+        <div class="sustain-stat">42,000+ lives upskilled</div>
+      </div>
+      <div class="sustain-card reveal reveal-delay-2">
+        <div class="sustain-icon">❤️</div>
+        <h3>Access to Health</h3>
+        <p>Tiered pricing, donation programmes, and partnerships with NGOs to bring essential medicines to under-served regions.</p>
+        <div class="sustain-stat">6.1M+ patients reached</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== MEDIA CENTRE ===== -->
+<section class="section media-section" id="media">
+  <div class="media-inner">
+    <div class="media-header">
+      <div class="section-tag reveal">Latest at Edolf</div>
+      <h2 class="section-title reveal">News &amp; <em>Press Releases.</em></h2>
+    </div>
+    <div class="media-grid">
+      <div class="media-card reveal">
+        <div class="media-thumb"><span class="media-tag">Financials</span></div>
+        <div class="media-body">
+          <span class="media-date">Apr 28, 2026</span>
+          <h3>Edolf Pharmacy reports record Q4 FY26 results, revenue up 18% YoY</h3>
+          <p>Specialty portfolio and US generics drive double-digit growth; full-year revenue crosses $2.4 billion for the first time.</p>
+          <a href="#" class="media-link">Read More →</a>
+        </div>
+      </div>
+      <div class="media-card reveal reveal-delay-1">
+        <div class="media-thumb media-thumb-2"><span class="media-tag">Pipeline</span></div>
+        <div class="media-body">
+          <span class="media-date">Mar 14, 2026</span>
+          <h3>EdoMab-T™ trastuzumab biosimilar accepted for USFDA review</h3>
+          <p>Phase III data demonstrates equivalence in HER2-positive breast cancer; commercial launch targeted for Q3 FY27.</p>
+          <a href="#" class="media-link">Read More →</a>
+        </div>
+      </div>
+      <div class="media-card reveal reveal-delay-2">
+        <div class="media-thumb media-thumb-3"><span class="media-tag">Partnership</span></div>
+        <div class="media-body">
+          <span class="media-date">Feb 02, 2026</span>
+          <h3>Edolf signs definitive agreement to acquire dermatology specialist DermaCare</h3>
+          <p>Adds 12 prescription dermatology brands and a US sales force, accelerating Edolf's specialty growth strategy.</p>
+          <a href="#" class="media-link">Read More →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ===== CTA / CONTACT ===== -->
 <section class="section cta-section" id="contact">
   <div class="cta-inner">
@@ -507,7 +627,8 @@ a{text-decoration:none;color:inherit}
     <div class="footer-col">
       <h4>Connect</h4>
       <a href="#">Investor Relations</a>
-      <a href="#">Media Centre</a>
+      <a href="#media">Media Centre</a>
+      <a href="#sustainability">Sustainability</a>
       <a href="#contact">Contact Us</a>
       <a href="#">Privacy Policy</a>
     </div>
