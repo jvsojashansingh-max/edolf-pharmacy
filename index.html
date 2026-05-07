@@ -92,6 +92,27 @@ a{text-decoration:none;color:inherit}
 .orb-2{width:300px;height:300px;background:#3b82f6;bottom:0;left:-80px;animation:float 15s 3s ease-in-out infinite}
 @keyframes float{0%,100%{transform:translate(0,0)}50%{transform:translate(30px,-30px)}}
 
+/* Hero anniversary badge (Cipla-inspired "Caring for Life" mark) */
+.hero-badge{position:absolute;top:120px;right:48px;z-index:3;display:flex;flex-direction:column;align-items:center;text-align:center;opacity:0;transform:translateY(-20px) scale(.9);animation:badgeIn 1s 1.1s cubic-bezier(.34,1.56,.64,1) forwards}
+.hero-badge-ring{width:128px;height:128px;border-radius:50%;border:2px solid rgba(245,158,11,.35);background:radial-gradient(circle,rgba(245,158,11,.12),transparent 70%);display:flex;flex-direction:column;align-items:center;justify-content:center;position:relative}
+.hero-badge-ring::before{content:'';position:absolute;inset:-6px;border-radius:50%;border:1px dashed rgba(245,158,11,.25);animation:rotateBadge 28s linear infinite}
+.hero-badge-num{font-size:2.6rem;font-weight:900;line-height:1;letter-spacing:-.04em;color:var(--orange)}
+.hero-badge-yrs{font-size:.6rem;font-weight:700;letter-spacing:.18em;color:rgba(255,255,255,.85);text-transform:uppercase;margin-top:2px}
+.hero-badge-label{font-size:.62rem;font-weight:600;text-transform:uppercase;letter-spacing:.2em;color:rgba(255,255,255,.7);margin-top:10px;border-top:1px solid rgba(245,158,11,.3);padding-top:6px;width:118px}
+@keyframes badgeIn{to{opacity:1;transform:translateY(0) scale(1)}}
+@keyframes rotateBadge{to{transform:rotate(360deg)}}
+
+/* Floating "Watch Our Story" CTA (Sun Pharma-inspired) */
+.watch-floating{position:fixed;right:0;top:50%;z-index:80;transform:translateY(-50%) translateX(110%);background:linear-gradient(135deg,var(--orange),var(--orange-dark));color:var(--navy-deep);padding:14px 22px 14px 18px;border-radius:50px 0 0 50px;display:flex;align-items:center;gap:10px;font-size:.78rem;font-weight:700;letter-spacing:.02em;box-shadow:-8px 8px 28px rgba(245,158,11,.28);transition:transform .55s cubic-bezier(.4,0,.2,1),padding .3s,opacity .3s;opacity:0;pointer-events:none;cursor:pointer;border:none;font-family:inherit}
+.watch-floating.visible{transform:translateY(-50%) translateX(0);opacity:1;pointer-events:all}
+.watch-floating:hover{padding:14px 28px 14px 24px}
+.watch-icon{display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;border-radius:50%;background:var(--navy-deep);color:var(--orange);font-size:.55rem;padding-left:2px;flex-shrink:0}
+
+/* Stats tagline (Sun Pharma "Touching Lives" inspiration) */
+.stats-tagline{margin-top:12px;text-align:center;font-size:clamp(.85rem,1.4vw,1.05rem);color:var(--gray-500);font-weight:400;letter-spacing:.01em;max-width:640px}
+.stats-tagline strong{color:var(--orange-dark);font-weight:800;font-size:1.15em;letter-spacing:-.01em}
+.stats-tagline em{font-style:normal;color:var(--navy);font-weight:600}
+
 /* ===== STATS SECTION ===== */
 .stats-section{background:var(--white);padding:0 40px;flex-direction:column;gap:60px}
 .stats-section .section-tag{text-align:center}
@@ -251,6 +272,13 @@ a{text-decoration:none;color:inherit}
   .hero h1{letter-spacing:-.035em}
   .hero-cta{flex-direction:column;gap:12px}
   .hero-cta .btn{justify-content:center}
+  .hero-badge{top:78px;right:18px}
+  .hero-badge-ring{width:88px;height:88px}
+  .hero-badge-num{font-size:1.8rem}
+  .hero-badge-yrs{font-size:.52rem}
+  .hero-badge-label{font-size:.55rem;letter-spacing:.16em;width:84px}
+  .watch-floating{font-size:.7rem;padding:11px 16px 11px 14px}
+  .watch-icon{width:20px;height:20px}
 
   .stats-section{padding:0 24px;gap:20px}
   .stats-grid,.stats-grid-2{grid-template-columns:repeat(3,1fr)}
@@ -343,10 +371,20 @@ a{text-decoration:none;color:inherit}
 <section class="section hero" id="hero">
   <div class="orb orb-1"></div>
   <div class="orb orb-2"></div>
+
+  <!-- Anniversary badge -->
+  <div class="hero-badge" aria-hidden="true">
+    <div class="hero-badge-ring">
+      <div class="hero-badge-num">30</div>
+      <div class="hero-badge-yrs">Years</div>
+    </div>
+    <div class="hero-badge-label">Caring for Life</div>
+  </div>
+
   <div class="hero-inner">
-    <div class="hero-eyebrow">Caring for Life · FY26</div>
+    <div class="hero-eyebrow">Caring for Life · FY27</div>
     <h1>From Care<br>to <em>Cure.</em></h1>
-    <p class="hero-sub">Developing and delivering high-quality medicines that improve patient outcomes across 70+ countries. From primary care essentials to breakthrough specialty therapies in oncology, dermatology, and metabolic health.</p>
+    <p class="hero-sub">Developing and delivering high-quality medicines that improve patient outcomes across 72+ countries. From primary care essentials to breakthrough specialty therapies in oncology, dermatology, and metabolic health.</p>
     <div class="hero-cta">
       <a href="#about" class="btn btn-primary">Discover Our Story</a>
       <a href="#pipeline" class="btn btn-ghost">Explore Pipeline →</a>
@@ -358,6 +396,12 @@ a{text-decoration:none;color:inherit}
   </div>
 </section>
 
+<!-- Floating "Watch Our Story" CTA (visible after hero) -->
+<a href="#about" class="watch-floating" id="watchFloating" aria-label="Watch our story">
+  <span class="watch-icon">▶</span>
+  <span>Watch Our Story</span>
+</a>
+
 <!-- ===== STATS ===== -->
 <section class="section stats-section" id="stats">
   <div class="section-tag reveal">
@@ -365,31 +409,34 @@ a{text-decoration:none;color:inherit}
   </div>
   <div class="stats-grid">
     <div class="stat-card reveal">
-      <div class="stat-number" data-target="70">0<span>+</span></div>
+      <div class="stat-number" data-target="72">0<span>+</span></div>
       <div class="stat-label">Countries Served</div>
     </div>
     <div class="stat-card reveal reveal-delay-1">
-      <div class="stat-number" data-target="1750">0<span>+</span></div>
+      <div class="stat-number" data-target="1900">0<span>+</span></div>
       <div class="stat-label">Products Portfolio</div>
     </div>
     <div class="stat-card reveal reveal-delay-2">
-      <div class="stat-number" data-target="14">0</div>
+      <div class="stat-number" data-target="15">0</div>
       <div class="stat-label">Manufacturing Sites</div>
     </div>
   </div>
   <div class="stats-grid-2">
     <div class="stat-card reveal">
-      <div class="stat-number" data-target="8200">0<span>+</span></div>
+      <div class="stat-number" data-target="9100">0<span>+</span></div>
       <div class="stat-label">Team Members</div>
     </div>
     <div class="stat-card reveal reveal-delay-1">
-      <div class="stat-number">$2.4<span>B</span></div>
+      <div class="stat-number">$2.6<span>B</span></div>
       <div class="stat-label">FY26 Revenue</div>
     </div>
     <div class="stat-card reveal reveal-delay-2">
       <div class="stat-number" data-target="11">0<span>%</span></div>
       <div class="stat-label">Revenue in R&amp;D</div>
     </div>
+  </div>
+  <div class="stats-tagline reveal reveal-delay-2">
+    <strong>1,200+</strong> lives touched <em>every minute</em> &mdash; one prescription at a time, across six continents.
   </div>
 </section>
 
@@ -402,9 +449,9 @@ a{text-decoration:none;color:inherit}
     <div class="about-pills reveal">
       <div class="about-pill"><span class="pill-icon"></span>USFDA Approved</div>
       <div class="about-pill"><span class="pill-icon"></span>WHO-GMP Certified</div>
-      <div class="about-pill"><span class="pill-icon"></span>14 Manufacturing Sites</div>
+      <div class="about-pill"><span class="pill-icon"></span>15 Manufacturing Sites</div>
       <div class="about-pill"><span class="pill-icon"></span>EMA Compliant</div>
-      <div class="about-pill"><span class="pill-icon"></span>6.1M+ Patients Reached</div>
+      <div class="about-pill"><span class="pill-icon"></span>7.2M+ Patients Reached</div>
       <div class="about-pill"><span class="pill-icon"></span>ISO 14001 &amp; 45001</div>
     </div>
   </div>
@@ -524,19 +571,19 @@ a{text-decoration:none;color:inherit}
         <div class="sustain-icon">🌱</div>
         <h3>Environmental Stewardship</h3>
         <p>Driving our operations toward net-zero with renewable energy, water-positive sites, and zero-waste-to-landfill manufacturing.</p>
-        <div class="sustain-stat">62% renewables · 14 ZLD plants</div>
+        <div class="sustain-stat">68% renewables · 15 ZLD plants</div>
       </div>
       <div class="sustain-card reveal reveal-delay-1">
         <div class="sustain-icon">🎓</div>
         <h3>Skilling &amp; Inclusion</h3>
         <p>Empowering communities through pharmacy training, scholarships, and STEM programmes for underrepresented youth across our markets.</p>
-        <div class="sustain-stat">42,000+ lives upskilled</div>
+        <div class="sustain-stat">51,000+ lives upskilled</div>
       </div>
       <div class="sustain-card reveal reveal-delay-2">
         <div class="sustain-icon">❤️</div>
         <h3>Access to Health</h3>
         <p>Tiered pricing, donation programmes, and partnerships with NGOs to bring essential medicines to under-served regions.</p>
-        <div class="sustain-stat">6.1M+ patients reached</div>
+        <div class="sustain-stat">7.2M+ patients reached</div>
       </div>
     </div>
   </div>
@@ -553,27 +600,27 @@ a{text-decoration:none;color:inherit}
       <div class="media-card reveal">
         <div class="media-thumb"><span class="media-tag">Financials</span></div>
         <div class="media-body">
-          <span class="media-date">Apr 28, 2026</span>
-          <h3>Edolf Pharmacy reports record Q4 FY26 results, revenue up 18% YoY</h3>
-          <p>Specialty portfolio and US generics drive double-digit growth; full-year revenue crosses $2.4 billion for the first time.</p>
+          <span class="media-date">May 06, 2026</span>
+          <h3>Edolf Pharmacy reports record FY26 results, revenue crosses $2.6B</h3>
+          <p>Specialty portfolio and US generics drive 19% YoY growth; full-year EBITDA margin expands 220 bps to 27.4%.</p>
           <a href="#" class="media-link">Read More →</a>
         </div>
       </div>
       <div class="media-card reveal reveal-delay-1">
         <div class="media-thumb media-thumb-2"><span class="media-tag">Pipeline</span></div>
         <div class="media-body">
-          <span class="media-date">Mar 14, 2026</span>
-          <h3>EdoMab-T™ trastuzumab biosimilar accepted for USFDA review</h3>
-          <p>Phase III data demonstrates equivalence in HER2-positive breast cancer; commercial launch targeted for Q3 FY27.</p>
+          <span class="media-date">Apr 18, 2026</span>
+          <h3>EdoMab-T™ trastuzumab biosimilar advances to USFDA priority review</h3>
+          <p>Phase III data demonstrates equivalence in HER2-positive breast cancer; commercial launch on track for Q3 FY27.</p>
           <a href="#" class="media-link">Read More →</a>
         </div>
       </div>
       <div class="media-card reveal reveal-delay-2">
         <div class="media-thumb media-thumb-3"><span class="media-tag">Partnership</span></div>
         <div class="media-body">
-          <span class="media-date">Feb 02, 2026</span>
-          <h3>Edolf signs definitive agreement to acquire dermatology specialist DermaCare</h3>
-          <p>Adds 12 prescription dermatology brands and a US sales force, accelerating Edolf's specialty growth strategy.</p>
+          <span class="media-date">Mar 24, 2026</span>
+          <h3>DermaCare acquisition closes — integrating 12 dermatology brands across the US</h3>
+          <p>Combined US dermatology platform now spans 14 prescription brands with a 240-rep specialty field force.</p>
           <a href="#" class="media-link">Read More →</a>
         </div>
       </div>
@@ -643,15 +690,33 @@ a{text-decoration:none;color:inherit}
 (function(){
   'use strict';
 
-  // ===== NAVBAR =====
+  // ===== NAVBAR + FLOATING WATCH BUTTON =====
   const nav = document.getElementById('nav');
   const heroSection = document.getElementById('hero');
+  const watchFloating = document.getElementById('watchFloating');
+  const ctaSection = document.getElementById('contact');
 
   const heroObs = new IntersectionObserver(([e]) => {
     nav.classList.toggle('hero-visible', e.isIntersecting);
     nav.classList.toggle('scrolled', !e.isIntersecting);
+    // Show floating Watch button only after we've scrolled past hero
+    if (watchFloating) {
+      watchFloating.classList.toggle('visible', !e.isIntersecting);
+    }
   }, { threshold: 0.3 });
   heroObs.observe(heroSection);
+
+  // Hide floating Watch button on the contact/CTA section to avoid overlap
+  if (watchFloating && ctaSection) {
+    const ctaObs = new IntersectionObserver(([e]) => {
+      if (e.isIntersecting) {
+        watchFloating.classList.remove('visible');
+      } else if (!nav.classList.contains('hero-visible')) {
+        watchFloating.classList.add('visible');
+      }
+    }, { threshold: 0.4 });
+    ctaObs.observe(ctaSection);
+  }
 
   // ===== HAMBURGER =====
   const hamburger = document.getElementById('hamburger');
