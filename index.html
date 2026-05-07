@@ -66,7 +66,7 @@ nav.scrolled{box-shadow:0 4px 20px rgba(0,0,0,.1)}
 /* STATS BAR */
 .stats-bar{background:var(--navy);padding:0;position:relative;overflow:hidden}
 .stats-bar::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--orange) 0%,#fbbf24 50%,var(--orange-dark) 100%)}
-.stats-inner{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:repeat(5,1fr)}
+.stats-inner{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:repeat(6,1fr)}
 .stat-item{padding:46px 24px;text-align:center;border-right:1px solid rgba(255,255,255,.1);color:var(--white)}
 .stat-item:last-child{border:none}
 .stat-num{font-size:2.4rem;font-weight:800;color:var(--orange);margin-bottom:6px;letter-spacing:-.02em}
@@ -165,6 +165,42 @@ nav.scrolled{box-shadow:0 4px 20px rgba(0,0,0,.1)}
 .sustain-card a{font-size:.85rem;font-weight:700;color:var(--orange);transition:gap .2s;display:inline-flex;gap:6px;align-items:center}
 .sustain-card a:hover{gap:12px}
 
+/* TOUCHING LIVES STRIP */
+.touch{padding:80px 40px;background:linear-gradient(135deg,#fff7ed 0%,#fed7aa 50%,#fdba74 100%);position:relative;overflow:hidden}
+.touch::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 20% 50%,rgba(245,158,11,.18) 0%,transparent 60%)}
+.touch-inner{max-width:1180px;margin:0 auto;display:grid;grid-template-columns:1.2fr 1fr;gap:60px;align-items:center;position:relative;z-index:1}
+.touch-tag{font-size:.78rem;font-weight:700;text-transform:uppercase;letter-spacing:.2em;color:var(--orange-deep);margin-bottom:14px;display:inline-block}
+.touch h2{font-size:2.4rem;font-weight:800;color:var(--navy);line-height:1.15;letter-spacing:-.01em;margin-bottom:18px}
+.touch h2 em{color:var(--orange-deep);font-style:normal}
+.touch p{color:var(--gray-700);font-size:1.02rem;line-height:1.75;max-width:520px}
+.touch-stat{background:var(--white);border-radius:18px;padding:40px 36px;box-shadow:0 22px 50px rgba(180,83,9,.18);border:1px solid rgba(245,158,11,.18);text-align:center}
+.touch-num{font-size:3.6rem;font-weight:800;color:var(--orange-deep);line-height:1;letter-spacing:-.025em;margin-bottom:8px}
+.touch-num small{font-size:1.6rem;color:var(--orange);font-weight:700;vertical-align:top;margin-left:2px}
+.touch-cap{font-size:.8rem;font-weight:700;color:var(--navy);text-transform:uppercase;letter-spacing:.18em;margin-bottom:14px}
+.touch-sub{font-size:.92rem;color:var(--gray-600);line-height:1.6}
+
+/* FIND OUT MORE */
+.find{padding:100px 40px;background:var(--gray-50)}
+.find-grid{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.find-card{background:var(--white);border-radius:14px;overflow:hidden;border:1px solid var(--gray-200);transition:all .3s;display:flex;flex-direction:column}
+.find-card:hover{transform:translateY(-5px);box-shadow:0 18px 40px rgba(0,0,0,.08);border-color:var(--orange)}
+.find-img{height:160px;display:flex;align-items:center;justify-content:center;font-size:3rem;color:var(--white)}
+.find-img.f1{background:linear-gradient(135deg,var(--navy),var(--blue))}
+.find-img.f2{background:linear-gradient(135deg,#0369a1,#0ea5e9)}
+.find-img.f3{background:linear-gradient(135deg,var(--orange-deep),var(--orange))}
+.find-img.f4{background:linear-gradient(135deg,#15803d,#22c55e)}
+.find-body{padding:26px;flex:1;display:flex;flex-direction:column}
+.find-body h3{font-size:1.15rem;font-weight:700;color:var(--navy);margin-bottom:10px}
+.find-body p{font-size:.88rem;color:var(--gray-600);line-height:1.65;flex:1;margin-bottom:14px}
+.find-body a{font-size:.82rem;font-weight:700;color:var(--orange);transition:gap .2s;display:inline-flex;gap:6px;align-items:center}
+.find-body a:hover{gap:12px}
+
+/* WATCH STORY FAB */
+.watch-fab{position:fixed;right:24px;bottom:24px;background:var(--white);color:var(--orange-deep);border:1px solid rgba(245,158,11,.5);padding:10px 18px 10px 12px;border-radius:30px;font-size:.85rem;font-weight:700;box-shadow:0 14px 30px rgba(0,0,0,.18);display:flex;align-items:center;gap:10px;z-index:900;cursor:pointer;transition:all .25s}
+.watch-fab:hover{background:var(--orange);color:var(--white);transform:translateY(-2px)}
+.watch-fab .play{width:30px;height:30px;border-radius:50%;background:var(--orange);color:var(--white);display:flex;align-items:center;justify-content:center;font-size:.78rem}
+.watch-fab:hover .play{background:var(--white);color:var(--orange-deep)}
+
 /* PRESENCE */
 .presence{padding:110px 40px;background:var(--navy);color:var(--white);text-align:center;position:relative;overflow:hidden}
 .presence::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Ccircle cx='40' cy='40' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E") repeat;opacity:.6}
@@ -245,13 +281,16 @@ footer{background:var(--gray-900);color:rgba(255,255,255,.6);padding:70px 40px 3
   .hero{margin-top:72px;height:64vh;min-height:420px}
   .hero-content h1{font-size:2.1rem}
   .stats-inner{grid-template-columns:repeat(2,1fr)}
-  .stat-item:nth-child(5){grid-column:span 2}
+  
   .about{grid-template-columns:1fr;gap:40px;padding:60px 20px}
   .values-inner{grid-template-columns:1fr;gap:32px}
   .values-list{grid-template-columns:1fr;gap:22px}
   .pipeline-grid{grid-template-columns:1fr}
   .ir-inner{grid-template-columns:1fr;gap:18px}
-  .offerings-grid,.news-grid,.therapy-grid{grid-template-columns:1fr}
+  .offerings-grid,.news-grid,.therapy-grid,.find-grid{grid-template-columns:1fr}
+  .touch-inner{grid-template-columns:1fr;gap:32px}
+  .touch h2{font-size:1.8rem}
+  .watch-fab{right:14px;bottom:14px;padding:8px 14px 8px 8px;font-size:.8rem}
   .presence-grid{grid-template-columns:repeat(2,1fr)}
   .footer-inner{grid-template-columns:1fr 1fr;gap:32px}
   .quote blockquote{font-size:1.2rem}
@@ -335,14 +374,14 @@ footer{background:var(--gray-900);color:rgba(255,255,255,.6);padding:70px 40px 3
     <span class="ticker-item"><span class="dot"></span>Women's Health division launched across 18 markets</span>
     <span class="ticker-item"><span class="dot"></span>Gujarat Plant 4 inaugurated · 2B tablets/yr</span>
     <span class="ticker-item"><span class="dot"></span>Ranked Top 40 Asia Pharma Companies 2026</span>
-    <span class="ticker-item"><span class="dot"></span>Partnered with WHO on TB &amp; HIV access programs</span>
+    <span class="ticker-item"><span class="dot"></span>Strategic acquisition of NeuraGen Bio strengthens neurology pipeline</span>
     <span class="ticker-item"><span class="dot"></span>FY26 revenue up 22% YoY · operating margin at 24.6%</span>
     <span class="ticker-item"><span class="dot"></span>EdoTirz™ tirzepatide cleared for Phase III in India</span>
     <span class="ticker-item"><span class="dot"></span>USFDA approval for EdoVent™ albuterol HFA inhaler</span>
     <span class="ticker-item"><span class="dot"></span>Women's Health division launched across 18 markets</span>
     <span class="ticker-item"><span class="dot"></span>Gujarat Plant 4 inaugurated · 2B tablets/yr</span>
     <span class="ticker-item"><span class="dot"></span>Ranked Top 40 Asia Pharma Companies 2026</span>
-    <span class="ticker-item"><span class="dot"></span>Partnered with WHO on TB &amp; HIV access programs</span>
+    <span class="ticker-item"><span class="dot"></span>Strategic acquisition of NeuraGen Bio strengthens neurology pipeline</span>
   </div>
 </div>
 
@@ -350,6 +389,7 @@ footer{background:var(--gray-900);color:rgba(255,255,255,.6);padding:70px 40px 3
   <div class="stats-inner">
     <div class="stat-item"><div class="stat-num" data-count="65">0</div><div class="stat-label">Countries Served</div></div>
     <div class="stat-item"><div class="stat-num" data-count="1600">0</div><div class="stat-label">Products Portfolio</div></div>
+    <div class="stat-item"><div class="stat-num" data-count="60">0</div><div class="stat-label">Dosage Forms</div></div>
     <div class="stat-item"><div class="stat-num" data-count="13">0</div><div class="stat-label">Manufacturing Sites</div></div>
     <div class="stat-item"><div class="stat-num" data-count="7800">0</div><div class="stat-label">Team Members</div></div>
     <div class="stat-item"><div class="stat-num" data-count="10">0</div><div class="stat-label">% Revenue in R&amp;D</div></div>
@@ -393,6 +433,21 @@ footer{background:var(--gray-900);color:rgba(255,255,255,.6);padding:70px 40px 3
         <h3>One Edolf</h3>
         <p>7,800+ Edolfians across 65 countries, united by a single mission of caring for life with integrity.</p>
       </div>
+    </div>
+  </div>
+</section>
+
+<section class="touch">
+  <div class="touch-inner">
+    <div class="fade-up">
+      <span class="touch-tag">Caring for Life</span>
+      <h2>Touching Lives,<br><em>Every Single Minute.</em></h2>
+      <p>Across hospitals, clinics and home medicine cabinets in 65+ countries, an Edolf medicine is dispensed every few seconds — chronic disease therapies, biosimilars, anti-infectives and consumer health all working together to keep families well.</p>
+    </div>
+    <div class="touch-stat fade-up">
+      <div class="touch-cap">FY26 Patient Reach</div>
+      <div class="touch-num">740<small>+</small></div>
+      <div class="touch-sub">Edolf medicines prescribed every minute, somewhere in the world.</div>
     </div>
   </div>
 </section>
@@ -592,6 +647,48 @@ footer{background:var(--gray-900);color:rgba(255,255,255,.6);padding:70px 40px 3
   </div>
 </section>
 
+<section class="find">
+  <div class="section-header fade-up">
+    <div class="accent-line"></div>
+    <h2>Find Out More</h2>
+    <p>Explore the people, science and standards behind the Edolf promise.</p>
+  </div>
+  <div class="find-grid">
+    <div class="find-card fade-up">
+      <div class="find-img f1">🔬</div>
+      <div class="find-body">
+        <h3>Innovation</h3>
+        <p>Our R&amp;D engine harnesses molecular biology, AI-led drug discovery and clinical insights to fuel a pipeline of next-generation therapies.</p>
+        <a href="#pipeline">Read More →</a>
+      </div>
+    </div>
+    <div class="find-card fade-up">
+      <div class="find-img f2">✓</div>
+      <div class="find-body">
+        <h3>Quality</h3>
+        <p>A globally harmonised quality framework — USFDA, EMA and WHO-GMP cleared — built around Right First Time and patient safety.</p>
+        <a href="#">Read More →</a>
+      </div>
+    </div>
+    <div class="find-card fade-up">
+      <div class="find-img f3">🤝</div>
+      <div class="find-body">
+        <h3>Careers</h3>
+        <p>Edolfians solve hard problems and own outcomes. Join 7,800+ colleagues building careers powered by purpose, science and collaboration.</p>
+        <a href="#">Current Openings →</a>
+      </div>
+    </div>
+    <div class="find-card fade-up">
+      <div class="find-img f4">🌱</div>
+      <div class="find-body">
+        <h3>Responsibility</h3>
+        <p>Health, education, water and sanitation programs touching 5M+ lives — alongside our science-based net-zero 2040 commitment.</p>
+        <a href="#sustain">Read More →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="quote">
   <div class="quote-inner fade-up">
     <span class="mark">“</span>
@@ -603,7 +700,7 @@ footer{background:var(--gray-900);color:rgba(255,255,255,.6);padding:70px 40px 3
 <section class="news" id="news">
   <div class="section-header fade-up">
     <div class="accent-line"></div>
-    <h2>Media Centre</h2>
+    <h2>Media Centre &amp; Press Release</h2>
     <p>Latest updates, milestones and announcements from Edolf Pharmacy.</p>
   </div>
   <div class="news-grid">
@@ -631,6 +728,33 @@ footer{background:var(--gray-900);color:rgba(255,255,255,.6);padding:70px 40px 3
         <div class="news-date">March 2026</div>
         <h3>EdoCare-W™ Women's Health division launches across 18 countries</h3>
         <p>A new specialty franchise dedicated to contraception, menopause and hormonal therapies — reaching patients across India, the U.S., LATAM and Africa from day one.</p>
+        <a href="#">Read More →</a>
+      </div>
+    </div>
+    <div class="news-card fade-up">
+      <div class="news-img n1"><span class="news-tag">M&amp;A</span>🤝</div>
+      <div class="news-body">
+        <div class="news-date">May 2026</div>
+        <h3>Edolf signs definitive agreement to acquire NeuraGen Bio</h3>
+        <p>An all-cash transaction adding three Phase II CNS assets and a U.S. specialty sales force — accelerating Edolf's neurology franchise across migraine, epilepsy and Parkinson's.</p>
+        <a href="#">Read More →</a>
+      </div>
+    </div>
+    <div class="news-card fade-up">
+      <div class="news-img n2"><span class="news-tag">Launch</span>💉</div>
+      <div class="news-body">
+        <div class="news-date">February 2026</div>
+        <h3>EdoSema™ semaglutide injection launched in 4 emerging markets</h3>
+        <p>Affordable once-weekly GLP-1 therapy now reaching patients in India, Brazil, South Africa and the Philippines — supported by Edolf patient assistance programs.</p>
+        <a href="#">Read More →</a>
+      </div>
+    </div>
+    <div class="news-card fade-up">
+      <div class="news-img n3"><span class="news-tag">Recognition</span>🏅</div>
+      <div class="news-body">
+        <div class="news-date">January 2026</div>
+        <h3>Ranked among Top 40 Asia Pharma Companies for FY26</h3>
+        <p>Recognised by Asia Pharma Insights for its specialty pipeline depth, manufacturing excellence and inclusive patient access programs across emerging markets.</p>
         <a href="#">Read More →</a>
       </div>
     </div>
@@ -667,7 +791,7 @@ footer{background:var(--gray-900);color:rgba(255,255,255,.6);padding:70px 40px 3
     </div>
     <div class="footer-col">
       <h4>Connect</h4>
-      <a href="#investors">Investor Relations</a><a href="#news">Media Centre</a><a href="#pipeline">Pipeline</a><a href="#contact">Contact Us</a><a href="#">Privacy Policy</a>
+      <a href="#investors">Investor Relations</a><a href="#news">Media Centre</a><a href="#pipeline">Pipeline</a><a href="#contact">Contact Us</a><a href="#">Adverse Events Reporting</a><a href="#">Pharmacovigilance</a><a href="#">Privacy Policy</a>
     </div>
   </div>
   <div class="footer-bottom">
@@ -675,6 +799,8 @@ footer{background:var(--gray-900);color:rgba(255,255,255,.6);padding:70px 40px 3
     <span>Made with care for a healthier world.</span>
   </div>
 </footer>
+
+<a href="#about" class="watch-fab" aria-label="Watch our story"><span class="play">▶</span> Watch Our Story</a>
 
 <script>
 // Hero slider
