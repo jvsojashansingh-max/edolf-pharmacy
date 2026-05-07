@@ -89,6 +89,18 @@ nav.scrolled{box-shadow:0 4px 20px rgba(0,0,0,.1)}
 .btn-navy{background:var(--navy);color:var(--white);margin-top:12px}
 .btn-navy:hover{background:var(--blue);transform:translateY(-2px);box-shadow:0 8px 20px rgba(37,99,235,.25)}
 
+/* VALUES STRIP */
+.values{background:linear-gradient(135deg,var(--navy-deep) 0%,var(--navy) 60%,#1e3a5f 100%);padding:80px 40px;color:var(--white);position:relative;overflow:hidden}
+.values::after{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,transparent 0%,var(--orange) 50%,transparent 100%)}
+.values-inner{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1.1fr 2fr;gap:60px;align-items:center;position:relative;z-index:1}
+.values-tag{font-size:.78rem;font-weight:700;text-transform:uppercase;letter-spacing:.2em;color:var(--orange);margin-bottom:16px;display:block}
+.values h2{font-size:2.3rem;font-weight:800;line-height:1.15;letter-spacing:-.01em}
+.values h2 em{color:var(--orange);font-style:normal}
+.values-list{display:grid;grid-template-columns:repeat(3,1fr);gap:32px}
+.value-pill{padding-left:18px;border-left:3px solid var(--orange)}
+.value-pill h3{font-size:1.1rem;font-weight:700;margin-bottom:6px;color:var(--white)}
+.value-pill p{font-size:.88rem;line-height:1.65;opacity:.78}
+
 /* THERAPEUTIC AREAS */
 .therapy{padding:100px 40px;background:var(--white)}
 .therapy-grid{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
@@ -99,6 +111,28 @@ nav.scrolled{box-shadow:0 4px 20px rgba(0,0,0,.1)}
 .therapy-icon{font-size:2rem;margin-bottom:14px}
 .therapy-card h3{font-size:1.05rem;font-weight:700;color:var(--navy);margin-bottom:8px}
 .therapy-card p{font-size:.82rem;color:var(--gray-600);line-height:1.6}
+
+/* PIPELINE */
+.pipeline{padding:90px 40px;background:linear-gradient(180deg,#ffffff 0%,var(--cream) 100%)}
+.pipeline-grid{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.pipeline-card{background:var(--white);border-radius:14px;padding:24px;border:1px solid var(--gray-200);transition:all .3s;display:flex;flex-direction:column;gap:10px;position:relative}
+.pipeline-card:hover{border-color:var(--orange);box-shadow:0 14px 30px rgba(245,158,11,.12);transform:translateY(-3px)}
+.pipeline-tag{font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.12em;color:var(--orange)}
+.pipeline-card h3{font-size:1.05rem;font-weight:700;color:var(--navy);line-height:1.3}
+.pipeline-card p{font-size:.82rem;color:var(--gray-600);line-height:1.55;flex:1}
+.pipeline-bar{height:6px;border-radius:3px;background:var(--gray-100);overflow:hidden;margin-top:6px}
+.pipeline-bar i{display:block;height:100%;background:linear-gradient(90deg,var(--orange) 0%,#fbbf24 100%);border-radius:3px}
+.pipeline-stage{font-size:.72rem;font-weight:600;color:var(--gray-700);margin-top:4px;display:flex;justify-content:space-between}
+.pipeline-stage span:last-child{color:var(--orange);font-weight:700}
+
+/* IR STRIP */
+.ir-strip{background:var(--white);border-top:1px solid var(--gray-200);border-bottom:1px solid var(--gray-200);padding:36px 40px}
+.ir-inner{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1.5fr repeat(3,1fr);gap:30px;align-items:center}
+.ir-lede h3{font-size:1.3rem;font-weight:800;color:var(--navy);margin-bottom:4px}
+.ir-lede p{font-size:.85rem;color:var(--gray-600)}
+.ir-stat{text-align:left;border-left:3px solid var(--orange);padding-left:14px}
+.ir-stat .ir-num{font-size:1.5rem;font-weight:800;color:var(--navy);line-height:1.1}
+.ir-stat .ir-lab{font-size:.72rem;font-weight:600;color:var(--gray-600);text-transform:uppercase;letter-spacing:.12em;margin-top:4px}
 
 /* OFFERINGS */
 .offerings{background:var(--gray-50);padding:110px 40px}
@@ -202,6 +236,8 @@ footer{background:var(--gray-900);color:rgba(255,255,255,.6);padding:70px 40px 3
 @media(max-width:980px){
   .therapy-grid{grid-template-columns:repeat(2,1fr)}
   .sustain-grid{grid-template-columns:1fr}
+  .pipeline-grid{grid-template-columns:repeat(2,1fr)}
+  .ir-inner{grid-template-columns:1fr 1fr;gap:24px}
 }
 @media(max-width:768px){
   .nav-top{display:none}
@@ -211,6 +247,10 @@ footer{background:var(--gray-900);color:rgba(255,255,255,.6);padding:70px 40px 3
   .stats-inner{grid-template-columns:repeat(2,1fr)}
   .stat-item:nth-child(5){grid-column:span 2}
   .about{grid-template-columns:1fr;gap:40px;padding:60px 20px}
+  .values-inner{grid-template-columns:1fr;gap:32px}
+  .values-list{grid-template-columns:1fr;gap:22px}
+  .pipeline-grid{grid-template-columns:1fr}
+  .ir-inner{grid-template-columns:1fr;gap:18px}
   .offerings-grid,.news-grid,.therapy-grid{grid-template-columns:1fr}
   .presence-grid{grid-template-columns:repeat(2,1fr)}
   .footer-inner{grid-template-columns:1fr 1fr;gap:32px}
@@ -236,6 +276,7 @@ footer{background:var(--gray-900);color:rgba(255,255,255,.6);padding:70px 40px 3
     <div class="nav-links">
       <a href="#about">About Us</a>
       <a href="#therapies">Therapies</a>
+      <a href="#pipeline">Pipeline</a>
       <a href="#offerings">Offerings</a>
       <a href="#sustain">Sustainability</a>
       <a href="#presence">Global Presence</a>
@@ -251,7 +292,7 @@ footer{background:var(--gray-900);color:rgba(255,255,255,.6);padding:70px 40px 3
       <div class="hero-content">
         <span class="eyebrow">Caring for Life</span>
         <h1>From Care to Cure.<br>Healthcare for Everyone.</h1>
-        <p>At Edolf Pharmacy, we develop and deliver high-quality medicines that improve patient outcomes across 60+ countries — from primary care essentials to breakthrough specialty therapies.</p>
+        <p>At Edolf Pharmacy, we develop and deliver high-quality medicines that improve patient outcomes across 65+ countries — from primary care essentials to breakthrough specialty therapies.</p>
         <div class="hero-btns">
           <a href="#about" class="btn btn-white">Discover Our Story →</a>
           <a href="#therapies" class="btn btn-outline">Our Therapies</a>
@@ -261,10 +302,10 @@ footer{background:var(--gray-900);color:rgba(255,255,255,.6);padding:70px 40px 3
     <div class="hero-slide slide-2">
       <div class="hero-content">
         <span class="eyebrow">Innovation Pipeline</span>
-        <h1>Breakthrough Specialty Medicines.</h1>
-        <p>From oncology and dermatology to metabolic health and rare disease — our R&D engine is delivering next-generation treatments where the world needs them most.</p>
+        <h1>From GLP-1 to Biosimilars.<br>Next-Gen Specialty Care.</h1>
+        <p>EdoTirz™ tirzepatide, EdoMab-T™ trastuzumab biosimilar and the new EdoCare-W™ women's health franchise — our R&amp;D engine is delivering breakthroughs where they matter most.</p>
         <div class="hero-btns">
-          <a href="#offerings" class="btn btn-white">Explore Pipeline →</a>
+          <a href="#pipeline" class="btn btn-white">Explore Pipeline →</a>
         </div>
       </div>
     </div>
@@ -272,7 +313,7 @@ footer{background:var(--gray-900);color:rgba(255,255,255,.6);padding:70px 40px 3
       <div class="hero-content">
         <span class="eyebrow">Global Reach</span>
         <h1>Manufacturing Excellence,<br>Delivered Worldwide.</h1>
-        <p>12 USFDA &amp; WHO-GMP approved manufacturing sites across 4 continents serve 60+ countries with reliable, affordable, life-saving medicines.</p>
+        <p>13 USFDA &amp; WHO-GMP approved manufacturing sites across 4 continents serve 65+ countries with reliable, affordable, life-saving medicines.</p>
         <div class="hero-btns">
           <a href="#presence" class="btn btn-white">Global Presence →</a>
         </div>
@@ -288,28 +329,30 @@ footer{background:var(--gray-900);color:rgba(255,255,255,.6);padding:70px 40px 3
 
 <div class="ticker">
   <div class="ticker-track">
-    <span class="ticker-item"><span class="dot"></span>Q1FY27 results: revenue up 18% YoY</span>
-    <span class="ticker-item"><span class="dot"></span>EdoSema™ semaglutide approved in India</span>
-    <span class="ticker-item"><span class="dot"></span>New oncology division launched</span>
+    <span class="ticker-item"><span class="dot"></span>FY26 revenue up 22% YoY · operating margin at 24.6%</span>
+    <span class="ticker-item"><span class="dot"></span>EdoTirz™ tirzepatide cleared for Phase III in India</span>
+    <span class="ticker-item"><span class="dot"></span>USFDA approval for EdoVent™ albuterol HFA inhaler</span>
+    <span class="ticker-item"><span class="dot"></span>Women's Health division launched across 18 markets</span>
     <span class="ticker-item"><span class="dot"></span>Gujarat Plant 4 inaugurated · 2B tablets/yr</span>
-    <span class="ticker-item"><span class="dot"></span>Ranked Top 50 Asia Pharma Companies 2026</span>
-    <span class="ticker-item"><span class="dot"></span>Partnered with WHO on TB &amp; HIV access</span>
-    <span class="ticker-item"><span class="dot"></span>Q1FY27 results: revenue up 18% YoY</span>
-    <span class="ticker-item"><span class="dot"></span>EdoSema™ semaglutide approved in India</span>
-    <span class="ticker-item"><span class="dot"></span>New oncology division launched</span>
+    <span class="ticker-item"><span class="dot"></span>Ranked Top 40 Asia Pharma Companies 2026</span>
+    <span class="ticker-item"><span class="dot"></span>Partnered with WHO on TB &amp; HIV access programs</span>
+    <span class="ticker-item"><span class="dot"></span>FY26 revenue up 22% YoY · operating margin at 24.6%</span>
+    <span class="ticker-item"><span class="dot"></span>EdoTirz™ tirzepatide cleared for Phase III in India</span>
+    <span class="ticker-item"><span class="dot"></span>USFDA approval for EdoVent™ albuterol HFA inhaler</span>
+    <span class="ticker-item"><span class="dot"></span>Women's Health division launched across 18 markets</span>
     <span class="ticker-item"><span class="dot"></span>Gujarat Plant 4 inaugurated · 2B tablets/yr</span>
-    <span class="ticker-item"><span class="dot"></span>Ranked Top 50 Asia Pharma Companies 2026</span>
-    <span class="ticker-item"><span class="dot"></span>Partnered with WHO on TB &amp; HIV access</span>
+    <span class="ticker-item"><span class="dot"></span>Ranked Top 40 Asia Pharma Companies 2026</span>
+    <span class="ticker-item"><span class="dot"></span>Partnered with WHO on TB &amp; HIV access programs</span>
   </div>
 </div>
 
 <section class="stats-bar">
   <div class="stats-inner">
-    <div class="stat-item"><div class="stat-num" data-count="60">0</div><div class="stat-label">Countries Served</div></div>
-    <div class="stat-item"><div class="stat-num" data-count="1500">0</div><div class="stat-label">Products Portfolio</div></div>
-    <div class="stat-item"><div class="stat-num" data-count="12">0</div><div class="stat-label">Manufacturing Sites</div></div>
-    <div class="stat-item"><div class="stat-num" data-count="7000">0</div><div class="stat-label">Team Members</div></div>
-    <div class="stat-item"><div class="stat-num" data-count="9">0</div><div class="stat-label">% Revenue in R&amp;D</div></div>
+    <div class="stat-item"><div class="stat-num" data-count="65">0</div><div class="stat-label">Countries Served</div></div>
+    <div class="stat-item"><div class="stat-num" data-count="1600">0</div><div class="stat-label">Products Portfolio</div></div>
+    <div class="stat-item"><div class="stat-num" data-count="13">0</div><div class="stat-label">Manufacturing Sites</div></div>
+    <div class="stat-item"><div class="stat-num" data-count="7800">0</div><div class="stat-label">Team Members</div></div>
+    <div class="stat-item"><div class="stat-num" data-count="10">0</div><div class="stat-label">% Revenue in R&amp;D</div></div>
   </div>
 </section>
 
@@ -320,14 +363,37 @@ footer{background:var(--gray-900);color:rgba(255,255,255,.6);padding:70px 40px 3
   <div class="fade-up">
     <span class="section-eyebrow">About Edolf</span>
     <h2>Caring for Life,<br><span>One Patient at a Time</span></h2>
-    <p>Edolf Pharmacy is a fast-scaling global pharmaceutical company developing, manufacturing, and distributing medicines that meaningfully improve health outcomes — from chronic disease essentials to specialty therapies in oncology, dermatology, and metabolic disorders.</p>
-    <p>Built on a vertically integrated model spanning APIs, formulations, and consumer healthcare, we are committed to making innovation affordable and access universal.</p>
+    <p>Edolf Pharmacy is a fast-scaling global pharmaceutical company developing, manufacturing, and distributing medicines that meaningfully improve health outcomes — from chronic disease essentials to specialty therapies in oncology, dermatology, women's health, and metabolic disorders.</p>
+    <p>Built on a vertically integrated model spanning APIs, formulations, biosimilars and consumer healthcare, we are committed to making innovation affordable and access universal — caring for life across every step of the patient journey.</p>
     <div class="about-points">
-      <div class="about-point"><span class="check">✓</span><span>USFDA, EMA &amp; WHO-GMP approved manufacturing</span></div>
-      <div class="about-point"><span class="check">✓</span><span>9% of revenue invested annually in R&amp;D</span></div>
-      <div class="about-point"><span class="check">✓</span><span>Patient assistance reaching 4M+ people in 2025</span></div>
+      <div class="about-point"><span class="check">✓</span><span>USFDA, EMA &amp; WHO-GMP approved manufacturing across 13 sites</span></div>
+      <div class="about-point"><span class="check">✓</span><span>10% of revenue invested annually in R&amp;D and biosimilars</span></div>
+      <div class="about-point"><span class="check">✓</span><span>Patient assistance reaching 5.2M+ people across 65 countries in FY26</span></div>
     </div>
     <a href="#" class="btn btn-navy">Know More →</a>
+  </div>
+</section>
+
+<section class="values">
+  <div class="values-inner">
+    <div class="fade-up">
+      <span class="values-tag">Our Promise</span>
+      <h2>Believe. Innovate.<br><em>Drive Excellence.</em></h2>
+    </div>
+    <div class="values-list">
+      <div class="value-pill fade-up">
+        <h3>Patient First</h3>
+        <p>Every formulation, every clinical study, every plant decision is judged by one standard — does it improve patient lives.</p>
+      </div>
+      <div class="value-pill fade-up">
+        <h3>Science with Heart</h3>
+        <p>Best-in-class R&amp;D in specialty, biosimilars and chronic care, paired with deep patient access programs.</p>
+      </div>
+      <div class="value-pill fade-up">
+        <h3>One Edolf</h3>
+        <p>7,800+ Edolfians across 65 countries, united by a single mission of caring for life with integrity.</p>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -377,6 +443,65 @@ footer{background:var(--gray-900);color:rgba(255,255,255,.6);padding:70px 40px 3
       <div class="therapy-icon">🌿</div>
       <h3>Consumer Health</h3>
       <p>Wellness, vitamins, pain relief &amp; OTC essentials trusted by millions of households.</p>
+    </div>
+  </div>
+</section>
+
+<section class="pipeline" id="pipeline">
+  <div class="section-header fade-up">
+    <div class="accent-line"></div>
+    <h2>Pipeline Highlights</h2>
+    <p>Late-stage molecules and biosimilars advancing toward patients in 2026–2027.</p>
+  </div>
+  <div class="pipeline-grid">
+    <div class="pipeline-card fade-up">
+      <span class="pipeline-tag">Metabolic</span>
+      <h3>EdoTirz™ Tirzepatide</h3>
+      <p>Once-weekly GLP-1/GIP dual agonist for type 2 diabetes &amp; chronic weight management.</p>
+      <div class="pipeline-bar"><i style="width:78%"></i></div>
+      <div class="pipeline-stage"><span>Phase III</span><span>FY27 launch</span></div>
+    </div>
+    <div class="pipeline-card fade-up">
+      <span class="pipeline-tag">Oncology</span>
+      <h3>EdoMab-T™ Trastuzumab biosimilar</h3>
+      <p>HER2-targeted biosimilar for breast and gastric cancers — affordable specialty oncology.</p>
+      <div class="pipeline-bar"><i style="width:88%"></i></div>
+      <div class="pipeline-stage"><span>USFDA filing</span><span>Q3 FY27</span></div>
+    </div>
+    <div class="pipeline-card fade-up">
+      <span class="pipeline-tag">Respiratory</span>
+      <h3>EdoVent™ Albuterol HFA</h3>
+      <p>USFDA-approved generic albuterol inhaler — broadening access to acute asthma rescue therapy.</p>
+      <div class="pipeline-bar"><i style="width:100%"></i></div>
+      <div class="pipeline-stage"><span>Approved</span><span>Launching H1 FY27</span></div>
+    </div>
+    <div class="pipeline-card fade-up">
+      <span class="pipeline-tag">Women's Health</span>
+      <h3>EdoCare-W™ Portfolio</h3>
+      <p>Newly launched division — contraception, menopause &amp; hormonal therapies across 18 countries.</p>
+      <div class="pipeline-bar"><i style="width:100%"></i></div>
+      <div class="pipeline-stage"><span>Live</span><span>FY26 launch</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="ir-strip" id="investors">
+  <div class="ir-inner">
+    <div class="ir-lede fade-up">
+      <h3>Investor Relations</h3>
+      <p>Tracking sustainable, profitable growth — the Edolf way.</p>
+    </div>
+    <div class="ir-stat fade-up">
+      <div class="ir-num">22%</div>
+      <div class="ir-lab">FY26 Revenue Growth</div>
+    </div>
+    <div class="ir-stat fade-up">
+      <div class="ir-num">24.6%</div>
+      <div class="ir-lab">Operating Margin</div>
+    </div>
+    <div class="ir-stat fade-up">
+      <div class="ir-num">$2.1B</div>
+      <div class="ir-lab">FY26 Revenue</div>
     </div>
   </div>
 </section>
@@ -453,7 +578,7 @@ footer{background:var(--gray-900);color:rgba(255,255,255,.6);padding:70px 40px 3
   <div class="presence-content">
     <h2 class="fade-up">Global Presence</h2>
     <div class="accent-line"></div>
-    <p class="lead fade-up">Delivering healthcare solutions across continents with manufacturing excellence and local partnerships in 60+ countries.</p>
+    <p class="lead fade-up">Delivering healthcare solutions across continents with manufacturing excellence and local partnerships in 65+ countries.</p>
     <div class="presence-grid">
       <div class="presence-item fade-up"><div class="flag">🇮🇳</div><h4>India</h4><span>HQ · 6 Plants</span></div>
       <div class="presence-item fade-up"><div class="flag">🇺🇸</div><h4>United States</h4><span>3 Facilities</span></div>
@@ -486,26 +611,26 @@ footer{background:var(--gray-900);color:rgba(255,255,255,.6);padding:70px 40px 3
       <div class="news-img n1"><span class="news-tag">Pipeline</span>📰</div>
       <div class="news-body">
         <div class="news-date">May 2026</div>
-        <h3>Edolf launches EdoSema™ semaglutide for chronic weight management</h3>
-        <p>India's DCGI approves manufacturing of generic semaglutide injection — broadening access for patients with obesity and type 2 diabetes.</p>
+        <h3>EdoTirz™ tirzepatide enters Phase III in India</h3>
+        <p>Edolf's once-weekly dual GLP-1/GIP agonist progresses to pivotal trials — targeting an FY27 launch in metabolic health and chronic weight management.</p>
         <a href="#">Read More →</a>
       </div>
     </div>
     <div class="news-card fade-up">
-      <div class="news-img n2"><span class="news-tag">Recognition</span>🏆</div>
+      <div class="news-img n2"><span class="news-tag">Approval</span>🏆</div>
       <div class="news-body">
         <div class="news-date">April 2026</div>
-        <h3>Ranked among Top 50 pharma companies in Asia</h3>
-        <p>Industry recognition for our rapid growth, innovation pipeline, and commitment to USFDA-grade quality manufacturing.</p>
+        <h3>USFDA approval for EdoVent™ albuterol HFA inhaler</h3>
+        <p>A first-in-portfolio respiratory generic — strengthening Edolf's foothold in the U.S. inhalation market and expanding access to rescue asthma therapy.</p>
         <a href="#">Read More →</a>
       </div>
     </div>
     <div class="news-card fade-up">
-      <div class="news-img n3"><span class="news-tag">Operations</span>🌍</div>
+      <div class="news-img n3"><span class="news-tag">Strategy</span>🌍</div>
       <div class="news-body">
         <div class="news-date">March 2026</div>
-        <h3>New WHO-GMP facility in Gujarat inaugurated</h3>
-        <p>Plant 4 adds capacity for 2 billion tablets annually across 150+ formulations — including biosimilars for the first time.</p>
+        <h3>EdoCare-W™ Women's Health division launches across 18 countries</h3>
+        <p>A new specialty franchise dedicated to contraception, menopause and hormonal therapies — reaching patients across India, the U.S., LATAM and Africa from day one.</p>
         <a href="#">Read More →</a>
       </div>
     </div>
@@ -542,7 +667,7 @@ footer{background:var(--gray-900);color:rgba(255,255,255,.6);padding:70px 40px 3
     </div>
     <div class="footer-col">
       <h4>Connect</h4>
-      <a href="#">Investor Relations</a><a href="#news">Media Centre</a><a href="#contact">Contact Us</a><a href="#">Compliance</a><a href="#">Privacy Policy</a>
+      <a href="#investors">Investor Relations</a><a href="#news">Media Centre</a><a href="#pipeline">Pipeline</a><a href="#contact">Contact Us</a><a href="#">Privacy Policy</a>
     </div>
   </div>
   <div class="footer-bottom">
@@ -571,7 +696,7 @@ const fObs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isInterse
 document.querySelectorAll('.fade-up').forEach(el=>fObs.observe(el));
 
 // Smooth scroll
-document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener('click',e=>{const href=a.getAttribute('href);if(href.length<=1)return;e.preventDefault();const t=document.querySelector(href);if(t)t.scrollIntoView({behavior:'smooth',block:'start'})})});
+document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener('click',e=>{const href=a.getAttribute('href');if(href.length<=1)return;e.preventDefault();const t=document.querySelector(href);if(t)t.scrollIntoView({behavior:'smooth',block:'start'})})});
 </script>
 </body>
 </html>
