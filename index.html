@@ -213,6 +213,22 @@ a{text-decoration:none;color:inherit}
 .sustain-card p{font-size:.9rem;color:var(--gray-500);line-height:1.75;margin-bottom:18px}
 .sustain-stat{font-size:1.1rem;font-weight:700;color:var(--orange-dark);letter-spacing:-.01em}
 
+/* ===== AWARDS STRIP (Cipla-inspired recognition mark) ===== */
+.awards-strip{background:var(--white);border-top:1px solid var(--gray-200);border-bottom:1px solid var(--gray-200);padding:36px 40px;display:flex;flex-direction:column;align-items:center;gap:18px;min-height:auto!important;scroll-snap-align:none}
+.awards-eyebrow{font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.22em;color:var(--orange-dark);display:inline-flex;align-items:center;gap:10px}
+.awards-eyebrow::before,.awards-eyebrow::after{content:'';width:24px;height:1px;background:var(--orange-dark)}
+.awards-row{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:14px 28px;max-width:1100px}
+.award-chip{display:inline-flex;align-items:center;gap:10px;padding:10px 18px;background:var(--off-white);border:1px solid var(--gray-200);border-radius:10px;font-size:.8rem;font-weight:600;color:var(--navy);transition:all .35s}
+.award-chip:hover{border-color:var(--orange);box-shadow:0 6px 18px rgba(245,158,11,.1);transform:translateY(-2px)}
+.award-chip .award-mark{width:22px;height:22px;border-radius:50%;background:linear-gradient(135deg,var(--orange),var(--orange-dark));display:inline-flex;align-items:center;justify-content:center;color:#fff;font-size:.65rem;flex-shrink:0}
+.award-chip span.award-yr{color:var(--gray-500);font-weight:500;font-size:.72rem;margin-left:4px}
+@media(max-width:768px){
+  .awards-strip{padding:28px 22px;gap:14px}
+  .awards-row{gap:10px 16px}
+  .award-chip{font-size:.72rem;padding:8px 12px}
+  .award-chip .award-mark{width:18px;height:18px;font-size:.55rem}
+}
+
 /* ===== MEDIA CENTRE (Sun Pharma-inspired news cards) ===== */
 .media-section{background:var(--white);padding:60px 40px;flex-direction:column}
 .media-inner{max-width:1200px;width:100%}
@@ -412,9 +428,9 @@ a{text-decoration:none;color:inherit}
   </div>
 
   <div class="hero-inner">
-    <div class="hero-eyebrow">Caring for Life · Q2 FY27</div>
+    <div class="hero-eyebrow">Caring for Life · Q1 FY27</div>
     <h1>From Care<br>to <em>Cure.</em></h1>
-    <p class="hero-sub">Developing and delivering high-quality medicines that improve patient outcomes across 74+ countries. From primary care essentials to breakthrough specialty therapies in oncology, dermatology, GLP-1 metabolic health, and women's wellness.</p>
+    <p class="hero-sub">Advancing patient outcomes across 78+ countries with a portfolio that spans specialty brands, biosimilars, GLP-1 metabolic medicines and complex generics &mdash; backed by a 9,800-strong team and 17 USFDA-inspected manufacturing sites.</p>
     <div class="hero-cta">
       <a href="#about" class="btn btn-primary">Discover Our Story</a>
       <a href="#pipeline" class="btn btn-ghost">Explore Pipeline →</a>
@@ -446,34 +462,34 @@ a{text-decoration:none;color:inherit}
   </div>
   <div class="stats-grid">
     <div class="stat-card reveal">
-      <div class="stat-number" data-target="74">0<span>+</span></div>
+      <div class="stat-number" data-target="78">0<span>+</span></div>
       <div class="stat-label">Countries Served</div>
     </div>
     <div class="stat-card reveal reveal-delay-1">
-      <div class="stat-number" data-target="2050">0<span>+</span></div>
+      <div class="stat-number" data-target="2150">0<span>+</span></div>
       <div class="stat-label">Products Portfolio</div>
     </div>
     <div class="stat-card reveal reveal-delay-2">
-      <div class="stat-number" data-target="16">0</div>
+      <div class="stat-number" data-target="17">0</div>
       <div class="stat-label">Manufacturing Sites</div>
     </div>
   </div>
   <div class="stats-grid-2">
     <div class="stat-card reveal">
-      <div class="stat-number" data-target="9600">0<span>+</span></div>
+      <div class="stat-number" data-target="9800">0<span>+</span></div>
       <div class="stat-label">Team Members</div>
     </div>
     <div class="stat-card reveal reveal-delay-1">
-      <div class="stat-number">$2.8<span>B</span></div>
+      <div class="stat-number">$3.1<span>B</span></div>
       <div class="stat-label">FY27 Run-Rate</div>
     </div>
     <div class="stat-card reveal reveal-delay-2">
-      <div class="stat-number" data-target="12">0<span>%</span></div>
+      <div class="stat-number" data-target="13">0<span>%</span></div>
       <div class="stat-label">Revenue in R&amp;D</div>
     </div>
   </div>
   <div class="stats-tagline reveal reveal-delay-2">
-    <strong>1,400+</strong> lives touched <em>every minute</em> &mdash; one prescription at a time, across six continents.
+    <strong>1,520+</strong> lives touched <em>every minute</em> &mdash; one prescription at a time, across six continents.
   </div>
 </section>
 
@@ -486,11 +502,12 @@ a{text-decoration:none;color:inherit}
     <div class="about-pills reveal">
       <div class="about-pill"><span class="pill-icon"></span>USFDA Approved</div>
       <div class="about-pill"><span class="pill-icon"></span>WHO-GMP Certified</div>
-      <div class="about-pill"><span class="pill-icon"></span>16 Manufacturing Sites</div>
+      <div class="about-pill"><span class="pill-icon"></span>17 Manufacturing Sites</div>
       <div class="about-pill"><span class="pill-icon"></span>EMA Compliant</div>
-      <div class="about-pill"><span class="pill-icon"></span>8.4M+ Patients Reached</div>
+      <div class="about-pill"><span class="pill-icon"></span>9.6M+ Patients Reached</div>
       <div class="about-pill"><span class="pill-icon"></span>ISO 14001 &amp; 45001</div>
-      <div class="about-pill"><span class="pill-icon"></span>Great Place to Work&reg; · 5 yrs</div>
+      <div class="about-pill"><span class="pill-icon"></span>Great Place to Work&reg; · 6 yrs</div>
+      <div class="about-pill"><span class="pill-icon"></span>FE Pharma Gold &middot; Digital Tx 2026</div>
     </div>
   </div>
 </section>
@@ -594,11 +611,39 @@ a{text-decoration:none;color:inherit}
         <div class="pipe-stage"><span>Approved</span><span>H1 FY27</span></div>
       </div>
       <div class="pipe-card reveal reveal-delay-3">
+        <span class="pipe-tag">Dermatology · JAK</span>
+        <h3>EdoSelv&trade; Deuruxolitinib</h3>
+        <p>Oral selective JAK1/2 inhibitor for severe alopecia areata; US commercial launch in progress.</p>
+        <div class="pipe-progress"><div class="pipe-progress-bar" data-width="100"></div></div>
+        <div class="pipe-stage"><span>Launched · US</span><span>Q1 FY27</span></div>
+      </div>
+      <div class="pipe-card reveal">
+        <span class="pipe-tag">Biosimilars</span>
+        <h3>EdoBio&trade; Adalimumab + Pegfilgrastim</h3>
+        <p>Two-asset biosimilar launch covering immunology and oncology supportive care across 22 markets.</p>
+        <div class="pipe-progress"><div class="pipe-progress-bar" data-width="78"></div></div>
+        <div class="pipe-stage"><span>Commercial Roll-out</span><span>FY27</span></div>
+      </div>
+      <div class="pipe-card reveal reveal-delay-1">
         <span class="pipe-tag">Women's Health</span>
         <h3>EdoCare-W&trade; Portfolio</h3>
-        <p>Contraception, menopause &amp; hormonal therapies across 18 countries.</p>
+        <p>Contraception, menopause &amp; hormonal therapies; expanded to 22 countries this fiscal.</p>
         <div class="pipe-progress"><div class="pipe-progress-bar" data-width="100"></div></div>
         <div class="pipe-stage"><span>Live</span><span>FY26</span></div>
+      </div>
+      <div class="pipe-card reveal reveal-delay-2">
+        <span class="pipe-tag">Respiratory</span>
+        <h3>EdoFlu&trade; Fluticasone/Vilanterol</h3>
+        <p>Once-daily ICS/LABA combination inhaler for COPD &amp; persistent asthma; Ph3 read-out on track.</p>
+        <div class="pipe-progress"><div class="pipe-progress-bar" data-width="64"></div></div>
+        <div class="pipe-stage"><span>Phase 3</span><span>H2 FY27</span></div>
+      </div>
+      <div class="pipe-card reveal reveal-delay-3">
+        <span class="pipe-tag">Oncology · NCE</span>
+        <h3>EDO-117 Selective KRAS-G12C</h3>
+        <p>First-in-class oral covalent inhibitor; Ph2 expansion underway in NSCLC and colorectal cancer.</p>
+        <div class="pipe-progress"><div class="pipe-progress-bar" data-width="42"></div></div>
+        <div class="pipe-stage"><span>Phase 2</span><span>FY28</span></div>
       </div>
     </div>
   </div>
@@ -635,22 +680,34 @@ a{text-decoration:none;color:inherit}
       <div class="sustain-card reveal">
         <div class="sustain-icon">🌱</div>
         <h3>Environmental Stewardship</h3>
-        <p>Driving our operations toward net-zero by 2035 with renewable energy, water-positive sites, and zero-waste-to-landfill manufacturing across the network.</p>
-        <div class="sustain-stat">74% renewables · 16 ZLD plants</div>
+        <p>Driving our operations toward net-zero by 2035 with on-site solar, water-positive certification, and zero-waste-to-landfill manufacturing across the network.</p>
+        <div class="sustain-stat">81% renewables &middot; 17 ZLD plants</div>
       </div>
       <div class="sustain-card reveal reveal-delay-1">
         <div class="sustain-icon">🎓</div>
         <h3>Skilling &amp; Inclusion</h3>
         <p>Empowering communities through pharmacy training, scholarships, and STEM programmes for underrepresented youth across our markets.</p>
-        <div class="sustain-stat">62,000+ lives upskilled</div>
+        <div class="sustain-stat">71,000+ lives upskilled</div>
       </div>
       <div class="sustain-card reveal reveal-delay-2">
         <div class="sustain-icon">❤️</div>
         <h3>Access to Health</h3>
         <p>Tiered pricing, donation programmes, and partnerships with NGOs to bring essential medicines to under-served regions across six continents.</p>
-        <div class="sustain-stat">8.4M+ patients reached</div>
+        <div class="sustain-stat">9.6M+ patients reached</div>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- ===== AWARDS STRIP ===== -->
+<section class="awards-strip" aria-label="Awards and recognition">
+  <div class="awards-eyebrow">Awards &amp; Recognition</div>
+  <div class="awards-row">
+    <div class="award-chip"><span class="award-mark">★</span>Sustainable Manufacturing Award<span class="award-yr">· GMLA 2026</span></div>
+    <div class="award-chip"><span class="award-mark">▲</span>Pharma Supply Chain Icon<span class="award-yr">· ISCM 2026</span></div>
+    <div class="award-chip"><span class="award-mark">◆</span>Gold &middot; Digital Transformation<span class="award-yr">· FE Pharma 2026</span></div>
+    <div class="award-chip"><span class="award-mark">●</span>Top 50 Most Innovative Pharma<span class="award-yr">· Forbes 2026</span></div>
+    <div class="award-chip"><span class="award-mark">✿</span>Great Place to Work<span class="award-yr">· 6 yrs running</span></div>
   </div>
 </section>
 
@@ -663,29 +720,29 @@ a{text-decoration:none;color:inherit}
     </div>
     <div class="media-grid">
       <div class="media-card reveal">
-        <div class="media-thumb"><span class="media-tag">Acquisition</span></div>
+        <div class="media-thumb"><span class="media-tag">Acquisition · Biosimilars</span></div>
         <div class="media-body">
           <span class="media-date">May 07, 2026</span>
-          <h3>Edolf signs definitive agreement to acquire NovaTherapeutics specialty portfolio</h3>
-          <p>$2.4B all-cash deal adds 18 differentiated specialty brands across dermatology and women's health, expanding the US commercial footprint.</p>
+          <h3>Edolf to acquire BioVerge biosimilars portfolio in $3.6B all-cash deal</h3>
+          <p>Adds 11 marketed and late-stage biosimilars in immunology, oncology supportive care &amp; women's health &mdash; positioning Edolf among the top-10 global biosimilar players.</p>
           <a href="#" class="media-link">Read More →</a>
         </div>
       </div>
       <div class="media-card reveal reveal-delay-1">
-        <div class="media-thumb media-thumb-2"><span class="media-tag">Pipeline · GLP-1</span></div>
+        <div class="media-thumb media-thumb-2"><span class="media-tag">Launch · GLP-1</span></div>
         <div class="media-body">
           <span class="media-date">May 02, 2026</span>
-          <h3>EdoTirz™ launches in India under brand names Tirzelox and Edovance</h3>
-          <p>Tirzepatide once-weekly injection now available across 9,000 pharmacies; SURPASS-EDO Phase 3 results presented at ADA 2026.</p>
+          <h3>EdoTirz™ tirzepatide launches in India as Tirzelox &amp; Edovance</h3>
+          <p>Once-weekly injection now stocked across 12,000 pharmacies in all four strengths; SURPASS-EDO Phase 3 read-out featured at ADA 2026 Scientific Sessions.</p>
           <a href="#" class="media-link">Read More →</a>
         </div>
       </div>
       <div class="media-card reveal reveal-delay-2">
-        <div class="media-thumb media-thumb-3"><span class="media-tag">USFDA · sBLA</span></div>
+        <div class="media-thumb media-thumb-3"><span class="media-tag">USFDA · Approval</span></div>
         <div class="media-body">
-          <span class="media-date">Apr 22, 2026</span>
-          <h3>USFDA accepts sBLA for EdoMab-T™ in HER2-positive gastric cancer</h3>
-          <p>Priority review extends label into a second indication; PDUFA action date set for Q3 FY27. EBITDA margin expands 220 bps to 27.4% in FY26.</p>
+          <span class="media-date">Apr 28, 2026</span>
+          <h3>USFDA approves EdoSelv™ for severe alopecia areata; US launch underway</h3>
+          <p>First selective oral JAK1/2 inhibitor in Edolf's specialty derm franchise. Q4 FY26 results: revenue up 19%, EBITDA margin expands 240 bps to 28.1%.</p>
           <a href="#" class="media-link">Read More →</a>
         </div>
       </div>
