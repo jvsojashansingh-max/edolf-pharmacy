@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Edolf Pharmacy – Caring for Life. From Care to Cure.</title>
-<meta name="description" content="Edolf Pharmacy is a global pharmaceutical company advancing specialty medicines, generics, and consumer healthcare across 70+ countries.">
+<meta name="description" content="Edolf Pharmacy is a global pharmaceutical company advancing specialty medicines, generics, biosimilars and consumer healthcare across 74+ countries. 1,200+ lives touched every minute.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
@@ -102,6 +102,12 @@ a{text-decoration:none;color:inherit}
 @keyframes badgeIn{to{opacity:1;transform:translateY(0) scale(1)}}
 @keyframes rotateBadge{to{transform:rotate(360deg)}}
 
+/* Hero corporate film CTA (Cipla "Watch Now" inspired) */
+.hero-film-cta{display:inline-flex;align-items:center;gap:14px;margin-top:36px;padding:12px 22px 12px 12px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.18);border-radius:60px;color:#fff;font-size:.86rem;font-weight:600;letter-spacing:-.005em;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);transition:all .45s cubic-bezier(.4,0,.2,1);opacity:0;transform:translateY(20px);animation:fadeUp .8s 1.05s forwards}
+.hero-film-cta:hover{background:rgba(245,158,11,.12);border-color:rgba(245,158,11,.45);transform:translateY(-2px)}
+.hero-film-play{display:inline-flex;align-items:center;justify-content:center;width:38px;height:38px;border-radius:50%;background:var(--orange);color:var(--navy-deep);font-size:.7rem;padding-left:3px;flex-shrink:0;box-shadow:0 6px 18px rgba(245,158,11,.35)}
+.hero-film-eyebrow{display:block;font-size:.6rem;font-weight:700;text-transform:uppercase;letter-spacing:.18em;color:var(--orange);margin-bottom:2px}
+
 /* Floating "Watch Our Story" CTA (Sun Pharma-inspired) */
 .watch-floating{position:fixed;right:0;top:50%;z-index:80;transform:translateY(-50%) translateX(110%);background:linear-gradient(135deg,var(--orange),var(--orange-dark));color:var(--navy-deep);padding:14px 22px 14px 18px;border-radius:50px 0 0 50px;display:flex;align-items:center;gap:10px;font-size:.78rem;font-weight:700;letter-spacing:.02em;box-shadow:-8px 8px 28px rgba(245,158,11,.28);transition:transform .55s cubic-bezier(.4,0,.2,1),padding .3s,opacity .3s;opacity:0;pointer-events:none;cursor:pointer;border:none;font-family:inherit}
 .watch-floating.visible{transform:translateY(-50%) translateX(0);opacity:1;pointer-events:all}
@@ -151,6 +157,19 @@ a{text-decoration:none;color:inherit}
 .offer-emoji{font-size:2rem;margin-bottom:18px;display:block}
 .offer-card h3{font-size:1.15rem;font-weight:700;color:var(--navy);margin-bottom:10px}
 .offer-card p{font-size:.88rem;color:var(--gray-500);line-height:1.7}
+
+/* ===== THERAPY AREAS (Sun Pharma "Therapies We Are Present In" inspired) ===== */
+.therapy-section{background:linear-gradient(180deg,var(--white) 0%,var(--cream) 100%);padding:60px 40px;flex-direction:column}
+.therapy-inner{max-width:1180px;width:100%}
+.therapy-header{text-align:center;margin-bottom:50px}
+.therapy-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:14px;background:var(--white);border:1px solid var(--gray-200);border-radius:24px;padding:36px 28px;box-shadow:0 18px 48px rgba(26,54,93,.04)}
+.therapy-grid-row-2{margin-top:24px;grid-template-columns:repeat(6,1fr);max-width:980px;margin-left:auto;margin-right:auto}
+.therapy-card{display:flex;flex-direction:column;align-items:center;text-align:center;padding:18px 8px;border-radius:14px;transition:all .35s cubic-bezier(.4,0,.2,1);cursor:default}
+.therapy-card:hover{background:rgba(245,158,11,.06);transform:translateY(-3px)}
+.therapy-icon{width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.5rem;margin-bottom:12px;background:radial-gradient(circle,rgba(245,158,11,.16) 0%,rgba(245,158,11,0) 70%);color:var(--orange-dark);position:relative}
+.therapy-icon::before{content:'';position:absolute;inset:-8px;border-radius:50%;border:1px dashed rgba(245,158,11,.3);opacity:0;transition:opacity .35s}
+.therapy-card:hover .therapy-icon::before{opacity:1}
+.therapy-card h4{font-size:.78rem;font-weight:600;color:var(--navy);letter-spacing:-.005em;line-height:1.25}
 
 /* ===== PIPELINE ===== */
 .pipeline-section{background:linear-gradient(160deg,var(--navy-deep) 0%,var(--navy) 100%);color:var(--white);padding:60px 40px;flex-direction:column}
@@ -257,6 +276,8 @@ a{text-decoration:none;color:inherit}
   .offerings-grid{grid-template-columns:repeat(2,1fr)}
   .sustain-grid{grid-template-columns:1fr}
   .media-grid{grid-template-columns:repeat(2,1fr)}
+  .therapy-grid{grid-template-columns:repeat(4,1fr);padding:28px 20px}
+  .therapy-grid-row-2{grid-template-columns:repeat(4,1fr);max-width:none}
   .footer-inner{grid-template-columns:1fr 1fr;gap:32px}
 }
 @media(max-width:768px){
@@ -303,6 +324,12 @@ a{text-decoration:none;color:inherit}
   .sustain-grid{grid-template-columns:1fr;gap:14px}
   .sustain-card{padding:30px 24px}
 
+  .therapy-section{padding:40px 24px}
+  .therapy-grid,.therapy-grid-row-2{grid-template-columns:repeat(3,1fr);gap:8px;padding:22px 14px}
+  .therapy-card{padding:14px 4px}
+  .therapy-icon{width:46px;height:46px;font-size:1.2rem;margin-bottom:8px}
+  .therapy-card h4{font-size:.7rem}
+
   .media-section{padding:40px 24px}
   .media-grid{grid-template-columns:1fr;gap:14px}
   .media-thumb{height:110px}
@@ -331,6 +358,7 @@ a{text-decoration:none;color:inherit}
   <div class="nav-links">
     <a href="#about">About</a>
     <a href="#offerings">Offerings</a>
+    <a href="#therapies">Therapies</a>
     <a href="#pipeline">Pipeline</a>
     <a href="#presence">Global</a>
     <a href="#sustainability">Sustainability</a>
@@ -347,6 +375,7 @@ a{text-decoration:none;color:inherit}
   <a href="#about" class="mobile-link">About</a>
   <a href="#stats" class="mobile-link">Numbers</a>
   <a href="#offerings" class="mobile-link">Offerings</a>
+  <a href="#therapies" class="mobile-link">Therapy Areas</a>
   <a href="#pipeline" class="mobile-link">Pipeline</a>
   <a href="#presence" class="mobile-link">Global Presence</a>
   <a href="#sustainability" class="mobile-link">Sustainability</a>
@@ -360,6 +389,7 @@ a{text-decoration:none;color:inherit}
   <div class="dot" data-section="stats" data-label="Numbers"></div>
   <div class="dot" data-section="about" data-label="About"></div>
   <div class="dot" data-section="offerings" data-label="Offerings"></div>
+  <div class="dot" data-section="therapies" data-label="Therapies"></div>
   <div class="dot" data-section="pipeline" data-label="Pipeline"></div>
   <div class="dot" data-section="presence" data-label="Global"></div>
   <div class="dot" data-section="sustainability" data-label="Sustainability"></div>
@@ -382,13 +412,20 @@ a{text-decoration:none;color:inherit}
   </div>
 
   <div class="hero-inner">
-    <div class="hero-eyebrow">Caring for Life · FY27</div>
+    <div class="hero-eyebrow">Caring for Life · Q2 FY27</div>
     <h1>From Care<br>to <em>Cure.</em></h1>
-    <p class="hero-sub">Developing and delivering high-quality medicines that improve patient outcomes across 72+ countries. From primary care essentials to breakthrough specialty therapies in oncology, dermatology, and metabolic health.</p>
+    <p class="hero-sub">Developing and delivering high-quality medicines that improve patient outcomes across 74+ countries. From primary care essentials to breakthrough specialty therapies in oncology, dermatology, GLP-1 metabolic health, and women's wellness.</p>
     <div class="hero-cta">
       <a href="#about" class="btn btn-primary">Discover Our Story</a>
       <a href="#pipeline" class="btn btn-ghost">Explore Pipeline →</a>
     </div>
+    <a href="#about" class="hero-film-cta" aria-label="Watch the Edolf corporate film">
+      <span class="hero-film-play">▶</span>
+      <span>
+        <span class="hero-film-eyebrow">Now Streaming</span>
+        Watch our Corporate Film
+      </span>
+    </a>
   </div>
   <div class="scroll-hint">
     <div class="scroll-line"></div>
@@ -409,34 +446,34 @@ a{text-decoration:none;color:inherit}
   </div>
   <div class="stats-grid">
     <div class="stat-card reveal">
-      <div class="stat-number" data-target="72">0<span>+</span></div>
+      <div class="stat-number" data-target="74">0<span>+</span></div>
       <div class="stat-label">Countries Served</div>
     </div>
     <div class="stat-card reveal reveal-delay-1">
-      <div class="stat-number" data-target="1900">0<span>+</span></div>
+      <div class="stat-number" data-target="2050">0<span>+</span></div>
       <div class="stat-label">Products Portfolio</div>
     </div>
     <div class="stat-card reveal reveal-delay-2">
-      <div class="stat-number" data-target="15">0</div>
+      <div class="stat-number" data-target="16">0</div>
       <div class="stat-label">Manufacturing Sites</div>
     </div>
   </div>
   <div class="stats-grid-2">
     <div class="stat-card reveal">
-      <div class="stat-number" data-target="9100">0<span>+</span></div>
+      <div class="stat-number" data-target="9600">0<span>+</span></div>
       <div class="stat-label">Team Members</div>
     </div>
     <div class="stat-card reveal reveal-delay-1">
-      <div class="stat-number">$2.6<span>B</span></div>
-      <div class="stat-label">FY26 Revenue</div>
+      <div class="stat-number">$2.8<span>B</span></div>
+      <div class="stat-label">FY27 Run-Rate</div>
     </div>
     <div class="stat-card reveal reveal-delay-2">
-      <div class="stat-number" data-target="11">0<span>%</span></div>
+      <div class="stat-number" data-target="12">0<span>%</span></div>
       <div class="stat-label">Revenue in R&amp;D</div>
     </div>
   </div>
   <div class="stats-tagline reveal reveal-delay-2">
-    <strong>1,200+</strong> lives touched <em>every minute</em> &mdash; one prescription at a time, across six continents.
+    <strong>1,400+</strong> lives touched <em>every minute</em> &mdash; one prescription at a time, across six continents.
   </div>
 </section>
 
@@ -449,10 +486,11 @@ a{text-decoration:none;color:inherit}
     <div class="about-pills reveal">
       <div class="about-pill"><span class="pill-icon"></span>USFDA Approved</div>
       <div class="about-pill"><span class="pill-icon"></span>WHO-GMP Certified</div>
-      <div class="about-pill"><span class="pill-icon"></span>15 Manufacturing Sites</div>
+      <div class="about-pill"><span class="pill-icon"></span>16 Manufacturing Sites</div>
       <div class="about-pill"><span class="pill-icon"></span>EMA Compliant</div>
-      <div class="about-pill"><span class="pill-icon"></span>7.2M+ Patients Reached</div>
+      <div class="about-pill"><span class="pill-icon"></span>8.4M+ Patients Reached</div>
       <div class="about-pill"><span class="pill-icon"></span>ISO 14001 &amp; 45001</div>
+      <div class="about-pill"><span class="pill-icon"></span>Great Place to Work&reg; · 5 yrs</div>
     </div>
   </div>
 </section>
@@ -499,6 +537,33 @@ a{text-decoration:none;color:inherit}
   </div>
 </section>
 
+<!-- ===== THERAPY AREAS ===== -->
+<section class="section therapy-section" id="therapies">
+  <div class="therapy-inner">
+    <div class="therapy-header">
+      <div class="section-tag reveal">Therapy Areas</div>
+      <h2 class="section-title reveal">Therapies We Are <em>Present In.</em></h2>
+    </div>
+    <div class="therapy-grid">
+      <div class="therapy-card reveal"><span class="therapy-icon">🧠</span><h4>Neuropsychiatry</h4></div>
+      <div class="therapy-card reveal reveal-delay-1"><span class="therapy-icon">❤️</span><h4>Cardiovascular</h4></div>
+      <div class="therapy-card reveal reveal-delay-1"><span class="therapy-icon">🩺</span><h4>Gastroenterology</h4></div>
+      <div class="therapy-card reveal reveal-delay-2"><span class="therapy-icon">💉</span><h4>Pain &amp; Surgery</h4></div>
+      <div class="therapy-card reveal reveal-delay-2"><span class="therapy-icon">👁️</span><h4>Ophthalmology</h4></div>
+      <div class="therapy-card reveal reveal-delay-3"><span class="therapy-icon">🫁</span><h4>Respiratory</h4></div>
+      <div class="therapy-card reveal reveal-delay-3"><span class="therapy-icon">🌸</span><h4>Gynaecology</h4></div>
+    </div>
+    <div class="therapy-grid therapy-grid-row-2">
+      <div class="therapy-card reveal"><span class="therapy-icon">🫘</span><h4>Urology</h4></div>
+      <div class="therapy-card reveal reveal-delay-1"><span class="therapy-icon">🎗️</span><h4>Oncology</h4></div>
+      <div class="therapy-card reveal reveal-delay-1"><span class="therapy-icon">✨</span><h4>Dermatology</h4></div>
+      <div class="therapy-card reveal reveal-delay-2"><span class="therapy-icon">🦠</span><h4>Anti-infectives</h4></div>
+      <div class="therapy-card reveal reveal-delay-2"><span class="therapy-icon">⚖️</span><h4>Metabolic / GLP-1</h4></div>
+      <div class="therapy-card reveal reveal-delay-3"><span class="therapy-icon">🌿</span><h4>Consumer Health</h4></div>
+    </div>
+  </div>
+</section>
+
 <!-- ===== PIPELINE ===== -->
 <section class="section pipeline-section" id="pipeline">
   <div class="pipeline-inner">
@@ -508,18 +573,18 @@ a{text-decoration:none;color:inherit}
     </div>
     <div class="pipeline-cards">
       <div class="pipe-card reveal">
-        <span class="pipe-tag">Metabolic</span>
+        <span class="pipe-tag">Metabolic · GLP-1</span>
         <h3>EdoTirz&trade; Tirzepatide</h3>
-        <p>Once-weekly GLP-1/GIP dual agonist for type 2 diabetes &amp; chronic weight management.</p>
-        <div class="pipe-progress"><div class="pipe-progress-bar" data-width="78"></div></div>
-        <div class="pipe-stage"><span>Phase III</span><span>FY27</span></div>
+        <p>Once-weekly GLP-1/GIP dual agonist for type 2 diabetes &amp; chronic weight management. SURPASS-EDO Ph3 met primary endpoint.</p>
+        <div class="pipe-progress"><div class="pipe-progress-bar" data-width="86"></div></div>
+        <div class="pipe-stage"><span>Filing Prep</span><span>Q4 FY27</span></div>
       </div>
       <div class="pipe-card reveal reveal-delay-1">
         <span class="pipe-tag">Oncology</span>
         <h3>EdoMab-T&trade; Trastuzumab</h3>
-        <p>HER2-targeted biosimilar for breast and gastric cancers.</p>
-        <div class="pipe-progress"><div class="pipe-progress-bar" data-width="88"></div></div>
-        <div class="pipe-stage"><span>USFDA Filing</span><span>Q3 FY27</span></div>
+        <p>HER2-targeted biosimilar for breast and gastric cancers; USFDA priority review accepted.</p>
+        <div class="pipe-progress"><div class="pipe-progress-bar" data-width="92"></div></div>
+        <div class="pipe-stage"><span>USFDA Priority Review</span><span>Q3 FY27</span></div>
       </div>
       <div class="pipe-card reveal reveal-delay-2">
         <span class="pipe-tag">Respiratory</span>
@@ -570,20 +635,20 @@ a{text-decoration:none;color:inherit}
       <div class="sustain-card reveal">
         <div class="sustain-icon">🌱</div>
         <h3>Environmental Stewardship</h3>
-        <p>Driving our operations toward net-zero with renewable energy, water-positive sites, and zero-waste-to-landfill manufacturing.</p>
-        <div class="sustain-stat">68% renewables · 15 ZLD plants</div>
+        <p>Driving our operations toward net-zero by 2035 with renewable energy, water-positive sites, and zero-waste-to-landfill manufacturing across the network.</p>
+        <div class="sustain-stat">74% renewables · 16 ZLD plants</div>
       </div>
       <div class="sustain-card reveal reveal-delay-1">
         <div class="sustain-icon">🎓</div>
         <h3>Skilling &amp; Inclusion</h3>
         <p>Empowering communities through pharmacy training, scholarships, and STEM programmes for underrepresented youth across our markets.</p>
-        <div class="sustain-stat">51,000+ lives upskilled</div>
+        <div class="sustain-stat">62,000+ lives upskilled</div>
       </div>
       <div class="sustain-card reveal reveal-delay-2">
         <div class="sustain-icon">❤️</div>
         <h3>Access to Health</h3>
-        <p>Tiered pricing, donation programmes, and partnerships with NGOs to bring essential medicines to under-served regions.</p>
-        <div class="sustain-stat">7.2M+ patients reached</div>
+        <p>Tiered pricing, donation programmes, and partnerships with NGOs to bring essential medicines to under-served regions across six continents.</p>
+        <div class="sustain-stat">8.4M+ patients reached</div>
       </div>
     </div>
   </div>
@@ -598,29 +663,29 @@ a{text-decoration:none;color:inherit}
     </div>
     <div class="media-grid">
       <div class="media-card reveal">
-        <div class="media-thumb"><span class="media-tag">Financials</span></div>
+        <div class="media-thumb"><span class="media-tag">Acquisition</span></div>
         <div class="media-body">
-          <span class="media-date">May 06, 2026</span>
-          <h3>Edolf Pharmacy reports record FY26 results, revenue crosses $2.6B</h3>
-          <p>Specialty portfolio and US generics drive 19% YoY growth; full-year EBITDA margin expands 220 bps to 27.4%.</p>
+          <span class="media-date">May 07, 2026</span>
+          <h3>Edolf signs definitive agreement to acquire NovaTherapeutics specialty portfolio</h3>
+          <p>$2.4B all-cash deal adds 18 differentiated specialty brands across dermatology and women's health, expanding the US commercial footprint.</p>
           <a href="#" class="media-link">Read More →</a>
         </div>
       </div>
       <div class="media-card reveal reveal-delay-1">
-        <div class="media-thumb media-thumb-2"><span class="media-tag">Pipeline</span></div>
+        <div class="media-thumb media-thumb-2"><span class="media-tag">Pipeline · GLP-1</span></div>
         <div class="media-body">
-          <span class="media-date">Apr 18, 2026</span>
-          <h3>EdoMab-T™ trastuzumab biosimilar advances to USFDA priority review</h3>
-          <p>Phase III data demonstrates equivalence in HER2-positive breast cancer; commercial launch on track for Q3 FY27.</p>
+          <span class="media-date">May 02, 2026</span>
+          <h3>EdoTirz™ launches in India under brand names Tirzelox and Edovance</h3>
+          <p>Tirzepatide once-weekly injection now available across 9,000 pharmacies; SURPASS-EDO Phase 3 results presented at ADA 2026.</p>
           <a href="#" class="media-link">Read More →</a>
         </div>
       </div>
       <div class="media-card reveal reveal-delay-2">
-        <div class="media-thumb media-thumb-3"><span class="media-tag">Partnership</span></div>
+        <div class="media-thumb media-thumb-3"><span class="media-tag">USFDA · sBLA</span></div>
         <div class="media-body">
-          <span class="media-date">Mar 24, 2026</span>
-          <h3>DermaCare acquisition closes — integrating 12 dermatology brands across the US</h3>
-          <p>Combined US dermatology platform now spans 14 prescription brands with a 240-rep specialty field force.</p>
+          <span class="media-date">Apr 22, 2026</span>
+          <h3>USFDA accepts sBLA for EdoMab-T™ in HER2-positive gastric cancer</h3>
+          <p>Priority review extends label into a second indication; PDUFA action date set for Q3 FY27. EBITDA margin expands 220 bps to 27.4% in FY26.</p>
           <a href="#" class="media-link">Read More →</a>
         </div>
       </div>
