@@ -281,6 +281,53 @@ a{text-decoration:none;color:inherit}
 .reveal-delay-3{transition-delay:.45s}
 .reveal-delay-4{transition-delay:.6s}
 
+/* ===== INVESTOR SNAPSHOT TICKER (Cipla / Sun Pharma investor-page inspired) ===== */
+.investor-strip{background:linear-gradient(135deg,var(--navy-deep) 0%,var(--navy) 100%);color:#fff;padding:54px 40px;display:flex;flex-direction:column;align-items:center;gap:26px;min-height:auto!important;scroll-snap-align:none;position:relative;overflow:hidden}
+.investor-strip::before{content:'';position:absolute;top:-100px;right:-80px;width:340px;height:340px;border-radius:50%;background:radial-gradient(circle,rgba(245,158,11,.16),transparent 65%);pointer-events:none}
+.investor-strip::after{content:'';position:absolute;bottom:-140px;left:-100px;width:380px;height:380px;border-radius:50%;background:radial-gradient(circle,rgba(59,130,246,.1),transparent 65%);pointer-events:none}
+.investor-eyebrow{font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.22em;color:var(--orange);display:inline-flex;align-items:center;gap:10px;position:relative;z-index:2}
+.investor-eyebrow::before,.investor-eyebrow::after{content:'';width:24px;height:1px;background:var(--orange)}
+.investor-headline{font-size:clamp(1.4rem,3vw,2.1rem);font-weight:800;letter-spacing:-.025em;line-height:1.2;text-align:center;max-width:820px;position:relative;z-index:2}
+.investor-headline em{font-style:normal;color:var(--orange)}
+.investor-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;max-width:1100px;width:100%;position:relative;z-index:2}
+.investor-tile{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:16px;padding:24px 22px;transition:all .4s cubic-bezier(.4,0,.2,1);position:relative}
+.investor-tile:hover{background:rgba(255,255,255,.1);border-color:rgba(245,158,11,.4);transform:translateY(-3px)}
+.investor-tile-lbl{font-size:.62rem;font-weight:700;text-transform:uppercase;letter-spacing:.18em;color:rgba(255,255,255,.55);margin-bottom:10px;display:block}
+.investor-tile-val{font-size:1.85rem;font-weight:800;letter-spacing:-.025em;color:var(--orange);line-height:1;margin-bottom:6px}
+.investor-tile-delta{font-size:.74rem;font-weight:600;color:rgba(255,255,255,.7);letter-spacing:.01em}
+.investor-tile-delta.up{color:#4ade80}
+.investor-tile-delta.up::before{content:'\25B2 ';font-size:.65em}
+.investor-tile-delta.flat::before{content:'\25CF ';color:rgba(255,255,255,.4)}
+.investor-cta-row{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;position:relative;z-index:2}
+.investor-link{display:inline-flex;align-items:center;gap:8px;padding:11px 22px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);border-radius:50px;font-size:.78rem;font-weight:600;color:#fff;transition:all .35s}
+.investor-link:hover{background:rgba(245,158,11,.18);border-color:rgba(245,158,11,.5);transform:translateY(-2px)}
+.investor-link-primary{background:var(--orange);color:var(--navy-deep);border-color:var(--orange)}
+.investor-link-primary:hover{background:#fbbf24;border-color:#fbbf24}
+@media(max-width:1024px){.investor-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:768px){
+  .investor-strip{padding:42px 22px;gap:20px}
+  .investor-grid{grid-template-columns:repeat(2,1fr);gap:12px}
+  .investor-tile{padding:18px 16px}
+  .investor-tile-val{font-size:1.45rem}
+}
+
+/* ===== LIVE TODAY BANNER (Cipla-inspired announcement strip) ===== */
+.today-banner{background:linear-gradient(90deg,var(--orange-deep) 0%,var(--orange-dark) 50%,var(--orange) 100%);color:#fff;padding:14px 40px;display:flex;align-items:center;justify-content:center;gap:16px;font-size:.82rem;font-weight:600;letter-spacing:.005em;min-height:auto!important;scroll-snap-align:none;position:relative;overflow:hidden}
+.today-banner::before{content:'';position:absolute;inset:0;background:linear-gradient(90deg,transparent,rgba(255,255,255,.12),transparent);transform:translateX(-100%);animation:shineBanner 5s infinite}
+@keyframes shineBanner{0%{transform:translateX(-100%)}100%{transform:translateX(100%)}}
+.today-pill{display:inline-flex;align-items:center;gap:6px;padding:4px 12px;background:rgba(0,0,0,.18);border-radius:50px;font-size:.65rem;font-weight:800;letter-spacing:.18em;text-transform:uppercase;flex-shrink:0;position:relative;z-index:2}
+.today-pill::before{content:'';width:7px;height:7px;border-radius:50%;background:#22c55e;box-shadow:0 0 0 0 rgba(34,197,94,.7);animation:pulseDot 1.6s infinite}
+@keyframes pulseDot{0%{box-shadow:0 0 0 0 rgba(34,197,94,.7)}70%{box-shadow:0 0 0 10px rgba(34,197,94,0)}100%{box-shadow:0 0 0 0 rgba(34,197,94,0)}}
+.today-text{position:relative;z-index:2;text-align:center}
+.today-text strong{font-weight:800}
+.today-link{position:relative;z-index:2;display:inline-flex;align-items:center;gap:4px;padding:5px 14px;background:rgba(255,255,255,.18);border-radius:50px;font-size:.72rem;font-weight:700;color:#fff;transition:all .3s;flex-shrink:0;backdrop-filter:blur(8px)}
+.today-link:hover{background:rgba(255,255,255,.3);transform:translateX(2px)}
+@media(max-width:768px){
+  .today-banner{padding:12px 18px;font-size:.74rem;gap:10px;flex-wrap:wrap}
+  .today-pill{font-size:.58rem;padding:3px 9px}
+  .today-link{font-size:.65rem;padding:4px 10px}
+}
+
 @keyframes fadeUp{to{opacity:1;transform:translateY(0)}}
 
 /* ===== RESPONSIVE ===== */
@@ -368,6 +415,13 @@ a{text-decoration:none;color:inherit}
 </head>
 <body>
 
+<!-- LIVE TODAY BANNER -->
+<div class="today-banner" role="status" aria-live="polite">
+  <span class="today-pill">Live Now</span>
+  <span class="today-text"><strong>May 8, 2026 ·</strong> Edolf opens its first Lung &amp; Women's Wellness Centre in Bandra, Mumbai &mdash; five more cities going live this week.</span>
+  <a href="#wellness" class="today-link">See Centres →</a>
+</div>
+
 <!-- NAV -->
 <nav class="nav hero-visible" id="nav">
   <a href="#" class="nav-logo">Edolf<span>.</span>Pharmacy</a>
@@ -428,7 +482,7 @@ a{text-decoration:none;color:inherit}
   </div>
 
   <div class="hero-inner">
-    <div class="hero-eyebrow">Caring for Life · USFDA Albuterol HFA Approval · Q4 FY26 Read-out · May 13, 2026</div>
+    <div class="hero-eyebrow">Live Today · 1st Lung & Women's Wellness Centre Opens in Bandra · USFDA Albuterol HFA Cleared · Q4 FY26 Read-out May 13</div>
     <h1>From Care<br>to <em>Cure.</em></h1>
     <p class="hero-sub">Advancing patient outcomes across 82+ countries with a portfolio that spans specialty brands, biosimilars, GLP-1 metabolic medicines and complex generics &mdash; backed by a 10,400-strong team, 5 novel entities in clinical stage and 18 USFDA-inspected manufacturing sites.</p>
     <div class="hero-cta">
@@ -750,6 +804,60 @@ a{text-decoration:none;color:inherit}
   </div>
 </section>
 
+<!-- ===== INVESTOR SNAPSHOT (Cipla / Sun Pharma investor highlights inspired) ===== -->
+<section class="investor-strip" aria-label="Investor snapshot Q4 FY26">
+  <div class="investor-eyebrow">Investor Snapshot · Pre-Q4 FY26 Read-out</div>
+  <h2 class="investor-headline">Compounding growth across <em>innovation, scale &amp; margin.</em></h2>
+  <div class="investor-grid">
+    <div class="investor-tile">
+      <span class="investor-tile-lbl">FY26 Revenue (E)</span>
+      <div class="investor-tile-val">$8.7B</div>
+      <span class="investor-tile-delta up">+21% YoY · constant currency</span>
+    </div>
+    <div class="investor-tile">
+      <span class="investor-tile-lbl">EBITDA Margin</span>
+      <div class="investor-tile-val">28.4%</div>
+      <span class="investor-tile-delta up">+270 bps YoY · best-ever</span>
+    </div>
+    <div class="investor-tile">
+      <span class="investor-tile-lbl">FY27 Run-Rate (Pro-forma)</span>
+      <div class="investor-tile-val">$12.4B</div>
+      <span class="investor-tile-delta up">Post NovaHale close · top 3 women's health</span>
+    </div>
+    <div class="investor-tile">
+      <span class="investor-tile-lbl">R&amp;D Spend FY27</span>
+      <div class="investor-tile-val">$610M</div>
+      <span class="investor-tile-delta flat">7.0% of pro-forma revenue</span>
+    </div>
+    <div class="investor-tile">
+      <span class="investor-tile-lbl">Innovation Mix</span>
+      <div class="investor-tile-val">29%</div>
+      <span class="investor-tile-delta up">+9 pts vs FY24 · 5 NCEs in clinic</span>
+    </div>
+    <div class="investor-tile">
+      <span class="investor-tile-lbl">US Specialty Sales</span>
+      <div class="investor-tile-val">$1.62B</div>
+      <span class="investor-tile-delta up">+34% YoY · JAK + PD-L1 ramp</span>
+    </div>
+    <div class="investor-tile">
+      <span class="investor-tile-lbl">Net Debt / EBITDA</span>
+      <div class="investor-tile-val">0.4x</div>
+      <span class="investor-tile-delta flat">Investment-grade · pre-NovaHale</span>
+    </div>
+    <div class="investor-tile">
+      <span class="investor-tile-lbl">Lives Reached</span>
+      <div class="investor-tile-val">10.4M+</div>
+      <span class="investor-tile-delta up">Across 82 countries · FY26</span>
+    </div>
+  </div>
+  <div class="investor-cta-row">
+    <a href="#" class="investor-link investor-link-primary">Q4 FY26 Earnings · May 13 →</a>
+    <a href="#" class="investor-link">Investor Deck (PDF)</a>
+    <a href="#" class="investor-link">Annual Report FY26</a>
+    <a href="#" class="investor-link">Analyst Coverage</a>
+  </div>
+</section>
+
 <!-- ===== CTA / CONTACT ===== -->
 <section class="section cta-section" id="contact">
   <div class="cta-inner">
@@ -803,7 +911,7 @@ a{text-decoration:none;color:inherit}
     </div>
   </div>
   <div class="footer-bottom">
-    <span>&copy; 2026 Edolf Pharmacy Ltd. All rights reserved.</span>
+    <span>&copy; 2026 Edolf Pharmacy Ltd. All rights reserved. · Last updated 8 May 2026.</span>
     <span>Made with care for a healthier world.</span>
   </div>
 </footer>
