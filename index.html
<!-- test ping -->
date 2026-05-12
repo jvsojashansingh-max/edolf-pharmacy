@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Edolf Pharmacy – Caring for Life. From Care to Cure.</title>
-<meta name="description" content="Edolf Pharmacy is a global pharmaceutical company advancing specialty medicines, generics, biosimilars, and consumer healthcare across 74+ countries. Caring for Life · From Illness to Wellness, From Care to Cure. Q4 FY26 results scheduled for 22 May 2026 · scaling toward a Top-10 global biosimilars position. Touching lives every minute — one prescription at a time.">
+<meta name="description" content="Edolf Pharmacy is a global pharmaceutical company advancing specialty medicines, generics, biosimilars, GLP-1 metabolic therapies, and consumer healthcare across 74+ countries. Caring for Life · From Illness to Wellness, From Care to Cure. Q4 FY26 results scheduled for 22 May 2026 · scaling toward a Top-10 global biosimilars position and a leadership stake in women's health. Touching lives every minute — one prescription at a time.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
@@ -294,9 +294,9 @@ a{text-decoration:none;color:inherit}
   <div class="orb orb-1"></div>
   <div class="orb orb-2"></div>
   <div class="hero-inner">
-    <div class="hero-eyebrow">Caring for Life · From Illness to Wellness · Q4 FY26 · 22 May 2026</div>
+    <div class="hero-eyebrow">Caring for Life · From Illness to Wellness · Q4 FY26 Results · 22 May 2026</div>
     <h1>From Care<br>to <em>Cure.</em></h1>
-    <p class="hero-sub">Developing and delivering high-quality medicines that improve patient outcomes across 74+ countries &mdash; from primary care essentials to breakthrough specialty therapies, biosimilars and women's health. Touching lives every minute, one prescription at a time.</p>
+    <p class="hero-sub">Developing and delivering high-quality medicines that improve patient outcomes across 74+ countries &mdash; from primary care essentials to breakthrough specialty therapies, GLP-1 metabolic platforms, biosimilars and women's health. Touching lives every minute, one prescription at a time.</p>
     <div class="hero-cta">
       <a href="#about" class="btn btn-primary">Discover Our Story</a>
       <a href="#pipeline" class="btn btn-ghost">Explore Pipeline</a>
@@ -357,6 +357,7 @@ a{text-decoration:none;color:inherit}
       <div class="about-pill"><span class="pill-icon"></span>7.4M+ Patients Reached</div>
       <div class="about-pill"><span class="pill-icon"></span>BREATHE. Think Edolf</div>
       <div class="about-pill"><span class="pill-icon"></span>Top-10 Biosimilars Ambition</div>
+      <div class="about-pill"><span class="pill-icon"></span>GLP-1 &amp; Semaglutide Platform</div>
       <div class="about-pill"><span class="pill-icon"></span>Q4 FY26 Results · 22 May 2026</div>
     </div>
   </div>
@@ -415,28 +416,28 @@ a{text-decoration:none;color:inherit}
       <div class="pipe-card reveal">
         <span class="pipe-tag">Metabolic</span>
         <h3>EdoTirz&trade; Tirzepatide</h3>
-        <p>Once-weekly GLP-1/GIP dual agonist for type 2 diabetes &amp; chronic weight management.</p>
-        <div class="pipe-progress"><div class="pipe-progress-bar" data-width="78"></div></div>
+        <p>Once-weekly GLP-1/GIP dual agonist for type 2 diabetes &amp; chronic weight management &mdash; complementing our semaglutide programme.</p>
+        <div class="pipe-progress"><div class="pipe-progress-bar" data-width="82"></div></div>
         <div class="pipe-stage"><span>Phase III</span><span>FY27</span></div>
       </div>
       <div class="pipe-card reveal reveal-delay-1">
         <span class="pipe-tag">Oncology</span>
         <h3>EdoMab-T&trade; Trastuzumab</h3>
         <p>HER2-targeted biosimilar for breast and gastric cancers &mdash; anchor asset in our Top-10 global biosimilars ambition.</p>
-        <div class="pipe-progress"><div class="pipe-progress-bar" data-width="88"></div></div>
+        <div class="pipe-progress"><div class="pipe-progress-bar" data-width="90"></div></div>
         <div class="pipe-stage"><span>USFDA Filing</span><span>Q3 FY27</span></div>
       </div>
       <div class="pipe-card reveal reveal-delay-2">
         <span class="pipe-tag">Respiratory</span>
         <h3>EdoVent&trade; Albuterol HFA</h3>
-        <p>USFDA-approved generic albuterol inhaler for acute asthma rescue.</p>
+        <p>USFDA-approved generic albuterol inhaler for acute asthma rescue &mdash; commercial rollout underway across US specialty channels.</p>
         <div class="pipe-progress"><div class="pipe-progress-bar" data-width="100"></div></div>
-        <div class="pipe-stage"><span>Approved</span><span>H1 FY27</span></div>
+        <div class="pipe-stage"><span>Launched</span><span>H1 FY27</span></div>
       </div>
       <div class="pipe-card reveal reveal-delay-3">
         <span class="pipe-tag">Women's Health</span>
         <h3>EdoCare-W&trade; Portfolio</h3>
-        <p>Contraception, menopause &amp; hormonal therapies across 18 countries.</p>
+        <p>Contraception, menopause &amp; hormonal therapies live across 18 countries &mdash; scaling toward a top-3 global women's health franchise.</p>
         <div class="pipe-progress"><div class="pipe-progress-bar" data-width="100"></div></div>
         <div class="pipe-stage"><span>Live</span><span>FY26</span></div>
       </div>
@@ -517,7 +518,7 @@ a{text-decoration:none;color:inherit}
     </div>
   </div>
   <div class="footer-bottom">
-    <span>&copy; 2026 Edolf Pharmacy Ltd. All rights reserved. · Last refreshed 12 May 2026 · 13:00 IST · Q4 FY26 Results · 22 May 2026 · From Illness to Wellness, From Care to Cure.</span>
+    <span>&copy; 2026 Edolf Pharmacy Ltd. All rights reserved. · Last refreshed 12 May 2026 · Q4 FY26 Results · 22 May 2026 · From Illness to Wellness, From Care to Cure.</span>
     <span>Made with care for a healthier world.</span>
   </div>
 </footer>
