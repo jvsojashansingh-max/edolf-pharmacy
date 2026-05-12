@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Edolf Pharmacy – Caring for Life. From Care to Cure.</title>
+<meta name="description" content="Edolf Pharmacy is a global pharmaceutical company advancing specialty medicines, generics, biosimilars, GLP-1 metabolic therapies, and consumer healthcare across 74+ countries. Caring for Life · From Illness to Wellness, From Care to Cure. Q4 FY26 results scheduled for 22 May 2026 · scaling toward a Top-10 global biosimilars position and a leadership stake in women's health. Touching lives every minute — one prescription at a time.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+/* ===== RESET & VARS ===== */
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --navy:#1a365d;--navy-deep:#0f2647;--navy-light:#2d4a7a;
+  --orange:#f59e0b;--orange-dark:#d97706;--orange-deep:#b45309;
+  --white:#ffffff;--off-white:#fafbfc;--cream:#fef7ed;
+  --gray-50:#f9fafb;--gray-100:#f3f4f6;--gray-200:#e5e7eb;
+  --gray-400:#9ca3af;--gray-500:#6b7280;--gray-600:#4b5563;
+  --gray-800:#1f2937;--gray-900:#111827;
+  --section-height:100vh;--section-height-fallback:100dvh;
+}
+html{scroll-snap-type:y mandatory;overflow-y:scroll;overflow-x:hidden;scroll-behavior:smooth;-webkit-overflow-scrolling:touch}
+body{font-family:'Inter',system-ui,-apple-system,sans-serif;color:var(--gray-800);line-height:1.5;background:var(--white);overflow-x:hidden}
+a{text-decoration:none;color:inherit}
+
+/* ===== NAVIGATION ===== */
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:20px 32px;display:flex;align-items:center;justify-content:space-between;transition:all .5s cubic-bezier(.4,0,.2,1)}
+.nav.scrolled{background:rgba(255,255,255,.92);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);box-shadow:0 1px 0 rgba(0,0,0,.06);padding:14px 32px}
+.nav-logo{font-size:1.4rem;font-weight:800;letter-spacing:-.03em;color:var(--navy);transition:color .4s}
+.nav-logo span{color:var(--orange)}
+.nav.hero-visible .nav-logo{color:var(--white)}
+.nav.scrolled .nav-logo{color:var(--navy)}
+.nav-links{display:flex;gap:32px;align-items:center}
+.nav-links a{font-size:.82rem;font-weight:500;color:var(--gray-500);letter-spacing:.01em;transition:color .3s;position:relative}
+.nav-links a:hover{color:var(--navy)}
+.nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:1.5px;background:var(--orange);transition:width .3s}
+.nav-links a:hover::after{width:100%}
+.nav.hero-visible .nav-links a{color:rgba(255,255,255,.7)}
+.nav.hero-visible .nav-links a:hover{color:#fff}
+.nav.scrolled .nav-links a{color:var(--gray-500)}
+
+/* Hamburger */
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;z-index:200;padding:4px}
+.hamburger span{width:22px;height:2px;background:var(--navy);transition:all .3s;border-radius:2px}
+.nav.hero-visible .hamburger span{background:#fff}
+.nav.scrolled .hamburger span{background:var(--navy)}
+.hamburger.active span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
+.hamburger.active span:nth-child(2){opacity:0}
+.hamburger.active span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
+
+/* Mobile menu */
+.mobile-menu{position:fixed;inset:0;background:rgba(255,255,255,.98);backdrop-filter:blur(30px);-webkit-backdrop-filter:blur(30px);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:28px;z-index:150;opacity:0;pointer-events:none;transition:opacity .4s}
+.mobile-menu.open{opacity:1;pointer-events:all}
+.mobile-menu a{font-size:1.4rem;font-weight:600;color:var(--navy);transition:color .2s}
+.mobile-menu a:hover{color:var(--orange)}
+
+/* ===== DOT INDICATORS ===== */
+.dot-nav{position:fixed;right:24px;top:50%;transform:translateY(-50%);z-index:90;display:flex;flex-direction:column;gap:12px}
+.dot-nav .dot{width:10px;height:10px;border-radius:50%;background:rgba(26,54,93,.2);cursor:pointer;transition:all .4s;position:relative}
+.dot-nav .dot.active{background:var(--orange);transform:scale(1.3)}
+.dot-nav .dot::before{content:attr(data-label);position:absolute;right:22px;top:50%;transform:translateY(-50%);font-size:.7rem;font-weight:600;color:var(--navy);white-space:nowrap;opacity:0;transition:opacity .3s;pointer-events:none}
+.dot-nav .dot:hover::before{opacity:1}
+
+/* ===== SECTIONS (snap) ===== */
+.section{min-height:var(--section-height-fallback,100vh);min-height:var(--section-height);scroll-snap-align:start;scroll-snap-stop:always;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+
+/* ===== HERO ===== */
+.hero{background:linear-gradient(160deg,var(--navy-deep) 0%,var(--navy) 40%,var(--navy-light) 100%);color:var(--white);padding:0 40px}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 70% 40%,rgba(245,158,11,.08) 0%,transparent 70%)}
+.hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:120px;background:linear-gradient(to top,rgba(15,38,71,.4),transparent)}
+.hero-inner{max-width:1200px;width:100%;position:relative;z-index:2}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:.72rem;font-weight:600;text-transform:uppercase;letter-spacing:.2em;color:var(--orange);margin-bottom:28px;opacity:0;transform:translateY(20px);animation:fadeUp .8s .3s forwards}
+.hero-eyebrow::before{content:'';width:28px;height:1px;background:var(--orange)}
+.hero h1{font-size:clamp(2.8rem,7vw,5.6rem);font-weight:800;line-height:1.02;letter-spacing:-.045em;margin-bottom:28px;max-width:800px;opacity:0;transform:translateY(30px);animation:fadeUp .8s .5s forwards}
+.hero h1 em{font-style:normal;color:var(--orange)}
+.hero-sub{font-size:clamp(1rem,1.8vw,1.25rem);font-weight:300;line-height:1.7;max-width:520px;color:rgba(255,255,255,.7);margin-bottom:42px;opacity:0;transform:translateY(20px);animation:fadeUp .8s .7s forwards}
+.hero-cta{display:flex;gap:16px;flex-wrap:wrap;opacity:0;transform:translateY(20px);animation:fadeUp .8s .9s forwards}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 32px;border-radius:50px;font-size:.88rem;font-weight:600;border:none;cursor:pointer;transition:all .35s cubic-bezier(.4,0,.2,1)}
+.btn-primary{background:var(--orange);color:var(--navy-deep)}
+.btn-primary:hover{background:#fbbf24;transform:translateY(-2px);box-shadow:0 12px 32px rgba(245,158,11,.3)}
+.btn-ghost{background:transparent;color:rgba(255,255,255,.8);border:1.5px solid rgba(255,255,255,.25)}
+.btn-ghost:hover{border-color:rgba(255,255,255,.6);color:#fff;background:rgba(255,255,255,.06)}
+
+/* Scroll indicator */
+.scroll-hint{position:absolute;bottom:40px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:8px;color:rgba(255,255,255,.4);font-size:.68rem;font-weight:500;letter-spacing:.15em;text-transform:uppercase;animation:fadeUp .8s 1.2s forwards;opacity:0}
+.scroll-line{width:1px;height:40px;background:linear-gradient(to bottom,rgba(255,255,255,.4),transparent);animation:scrollPulse 2s infinite}
+@keyframes scrollPulse{0%,100%{opacity:.4;transform:scaleY(1)}50%{opacity:1;transform:scaleY(1.15)}}
+
+/* Floating orbs */
+.orb{position:absolute;border-radius:50%;filter:blur(80px);opacity:.15;pointer-events:none}
+.orb-1{width:400px;height:400px;background:var(--orange);top:-100px;right:-100px;animation:float 12s ease-in-out infinite}
+.orb-2{width:300px;height:300px;background:#3b82f6;bottom:0;left:-80px;animation:float 15s 3s ease-in-out infinite}
+@keyframes float{0%,100%{transform:translate(0,0)}50%{transform:translate(30px,-30px)}}
+
+/* ===== STATS SECTION ===== */
+.stats-section{background:var(--white);padding:0 40px;flex-direction:column;gap:60px}
+.stats-section .section-tag{text-align:center}
+.stats-grid{max-width:1100px;width:100%;display:grid;grid-template-columns:repeat(3,1fr);gap:0}
+.stat-card{text-align:center;padding:40px 24px;position:relative}
+.stat-card:not(:last-child)::after{content:'';position:absolute;right:0;top:20%;height:60%;width:1px;background:var(--gray-200)}
+.stat-number{font-size:clamp(2.8rem,5vw,4.2rem);font-weight:800;color:var(--navy);letter-spacing:-.04em;line-height:1;margin-bottom:8px}
+.stat-number span{color:var(--orange)}
+.stat-label{font-size:.78rem;font-weight:500;color:var(--gray-500);text-transform:uppercase;letter-spacing:.14em}
+
+/* Second row */
+.stats-grid-2{max-width:1100px;width:100%;display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--gray-200)}
+
+/* ===== ABOUT SECTION ===== */
+.about-section{background:var(--off-white);padding:0 40px;flex-direction:column;text-align:center}
+.about-inner{max-width:800px}
+.section-tag{display:inline-flex;align-items:center;gap:8px;font-size:.72rem;font-weight:600;text-transform:uppercase;letter-spacing:.2em;color:var(--orange);margin-bottom:20px}
+.section-tag::before,.section-tag::after{content:'';width:20px;height:1px;background:var(--orange)}
+.section-title{font-size:clamp(2rem,4.5vw,3.4rem);font-weight:800;color:var(--navy);letter-spacing:-.035em;line-height:1.08;margin-bottom:28px}
+.section-title em{font-style:normal;color:var(--orange)}
+.about-text{font-size:clamp(.95rem,1.5vw,1.12rem);color:var(--gray-600);line-height:1.85;max-width:680px;margin:0 auto 36px}
+.about-pills{display:flex;flex-wrap:wrap;justify-content:center;gap:12px}
+.about-pill{display:inline-flex;align-items:center;gap:8px;padding:10px 20px;background:var(--white);border-radius:50px;font-size:.82rem;font-weight:500;color:var(--navy);border:1px solid var(--gray-200);transition:all .3s}
+.about-pill:hover{border-color:var(--orange);box-shadow:0 4px 16px rgba(245,158,11,.1)}
+.about-pill .pill-icon{width:8px;height:8px;border-radius:50%;background:var(--orange)}
+
+/* ===== OFFERINGS ===== */
+.offerings-section{background:var(--white);padding:60px 40px;flex-direction:column}
+.offerings-inner{max-width:1200px;width:100%}
+.offerings-header{text-align:center;margin-bottom:60px}
+.offerings-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.offer-card{padding:40px 32px;border-radius:20px;background:var(--off-white);border:1px solid transparent;transition:all .5s cubic-bezier(.4,0,.2,1);cursor:default;position:relative;overflow:hidden}
+.offer-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--orange);transform:scaleX(0);transition:transform .5s;transform-origin:left}
+.offer-card:hover{transform:translateY(-6px);box-shadow:0 24px 48px rgba(0,0,0,.06);border-color:rgba(245,158,11,.15)}
+.offer-card:hover::before{transform:scaleX(1)}
+.offer-emoji{font-size:2rem;margin-bottom:18px;display:block}
+.offer-card h3{font-size:1.15rem;font-weight:700;color:var(--navy);margin-bottom:10px}
+.offer-card p{font-size:.88rem;color:var(--gray-500);line-height:1.7}
+
+/* ===== PIPELINE ===== */
+.pipeline-section{background:linear-gradient(160deg,var(--navy-deep) 0%,var(--navy) 100%);color:var(--white);padding:60px 40px;flex-direction:column}
+.pipeline-section .section-tag::before,.pipeline-section .section-tag::after{background:var(--orange)}
+.pipeline-section .section-title{color:var(--white)}
+.pipeline-inner{max-width:1100px;width:100%}
+.pipeline-header{text-align:center;margin-bottom:50px}
+.pipeline-cards{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.pipe-card{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:28px 24px;transition:all .4s;position:relative;overflow:hidden}
+.pipe-card:hover{background:rgba(255,255,255,.1);transform:translateY(-4px);border-color:var(--orange)}
+.pipe-tag{font-size:.65rem;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:var(--orange);margin-bottom:10px;display:block}
+.pipe-card h3{font-size:1rem;font-weight:700;margin-bottom:8px;line-height:1.3}
+.pipe-card p{font-size:.8rem;color:rgba(255,255,255,.6);line-height:1.6;margin-bottom:14px}
+.pipe-progress{height:4px;background:rgba(255,255,255,.1);border-radius:4px;overflow:hidden;margin-bottom:8px}
+.pipe-progress-bar{height:100%;background:linear-gradient(90deg,var(--orange),#fbbf24);border-radius:4px;transition:width 1.5s ease}
+.pipe-stage{display:flex;justify-content:space-between;font-size:.68rem;font-weight:600;color:rgba(255,255,255,.5)}
+.pipe-stage span:last-child{color:var(--orange)}
+
+/* ===== GLOBAL PRESENCE ===== */
+.presence-section{background:var(--off-white);padding:60px 40px;flex-direction:column}
+.presence-inner{max-width:1100px;width:100%}
+.presence-header{text-align:center;margin-bottom:50px}
+.presence-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.presence-card{background:var(--white);border-radius:16px;padding:28px 20px;text-align:center;border:1px solid var(--gray-200);transition:all .4s;cursor:default}
+.presence-card:hover{transform:translateY(-4px);border-color:var(--orange);box-shadow:0 16px 32px rgba(0,0,0,.05)}
+.presence-flag{font-size:2.2rem;margin-bottom:10px;display:block}
+.presence-card h4{font-size:.95rem;font-weight:700;color:var(--navy);margin-bottom:4px}
+.presence-card span{font-size:.75rem;color:var(--gray-500);font-weight:500}
+
+/* ===== CONTACT/CTA ===== */
+.cta-section{background:var(--white);padding:0 40px;flex-direction:column;text-align:center}
+.cta-inner{max-width:700px}
+.cta-section .section-title{margin-bottom:20px}
+.cta-sub{font-size:clamp(.95rem,1.4vw,1.1rem);color:var(--gray-500);line-height:1.8;margin-bottom:40px}
+.cta-btn{display:inline-flex;align-items:center;gap:10px;padding:18px 44px;background:var(--navy);color:var(--white);border-radius:50px;font-size:.95rem;font-weight:600;transition:all .35s;border:none;cursor:pointer}
+.cta-btn:hover{background:var(--orange);color:var(--navy-deep);transform:translateY(-2px);box-shadow:0 16px 40px rgba(245,158,11,.25)}
+.cta-links{margin-top:28px;display:flex;justify-content:center;gap:32px;flex-wrap:wrap}
+.cta-links a{font-size:.82rem;font-weight:500;color:var(--gray-400);transition:color .3s}
+.cta-links a:hover{color:var(--orange)}
+
+/* ===== FOOTER ===== */
+.footer-section{background:var(--gray-900);color:rgba(255,255,255,.5);min-height:auto!important;scroll-snap-align:end;padding:60px 40px 30px}
+.footer-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px}
+.footer-brand h3{font-size:1.3rem;font-weight:800;color:var(--white);margin-bottom:12px}
+.footer-brand h3 span{color:var(--orange)}
+.footer-brand p{font-size:.85rem;line-height:1.75;max-width:280px;margin-bottom:16px}
+.footer-socials{display:flex;gap:8px}
+.footer-socials a{width:34px;height:34px;background:rgba(255,255,255,.06);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.85rem;transition:all .3s}
+.footer-socials a:hover{background:var(--orange);color:var(--white)}
+.footer-col h4{color:var(--white);font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.12em;margin-bottom:16px}
+.footer-col a{display:block;font-size:.82rem;margin-bottom:9px;transition:color .2s}
+.footer-col a:hover{color:var(--orange)}
+.footer-bottom{max-width:1200px;margin:40px auto 0;padding-top:20px;border-top:1px solid rgba(255,255,255,.06);display:flex;justify-content:space-between;font-size:.75rem;flex-wrap:wrap;gap:8px}
+
+/* ===== REVEAL ANIMATIONS ===== */
+.reveal{opacity:0;transform:translateY(40px);transition:opacity .8s cubic-bezier(.4,0,.2,1),transform .8s cubic-bezier(.4,0,.2,1)}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.reveal-delay-1{transition-delay:.15s}
+.reveal-delay-2{transition-delay:.3s}
+.reveal-delay-3{transition-delay:.45s}
+.reveal-delay-4{transition-delay:.6s}
+
+@keyframes fadeUp{to{opacity:1;transform:translateY(0)}}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:1024px){
+  .nav-links{display:none}
+  .hamburger{display:flex}
+  .pipeline-cards{grid-template-columns:repeat(2,1fr)}
+  .presence-grid{grid-template-columns:repeat(2,1fr)}
+  .offerings-grid{grid-template-columns:repeat(2,1fr)}
+  .footer-inner{grid-template-columns:1fr 1fr;gap:32px}
+}
+@media(max-width:768px){
+  html{scroll-snap-type:y proximity}
+  .section{min-height:100dvh;min-height:100vh}
+  .nav{padding:16px 20px}
+  .nav.scrolled{padding:12px 20px}
+  .dot-nav{right:12px;gap:10px}
+  .dot-nav .dot{width:7px;height:7px}
+  .dot-nav .dot::before{display:none}
+
+  .hero{padding:0 24px}
+  .hero h1{letter-spacing:-.035em}
+  .hero-cta{flex-direction:column;gap:12px}
+  .hero-cta .btn{justify-content:center}
+
+  .stats-section{padding:0 24px;gap:20px}
+  .stats-grid,.stats-grid-2{grid-template-columns:repeat(3,1fr)}
+  .stat-card{padding:24px 12px}
+  .stat-label{font-size:.65rem;letter-spacing:.08em}
+
+  .about-section{padding:0 24px}
+  .about-pills{gap:8px}
+  .about-pill{font-size:.75rem;padding:8px 14px}
+
+  .offerings-section{padding:40px 24px}
+  .offerings-grid{grid-template-columns:1fr;gap:14px}
+  .offer-card{padding:28px 24px}
+
+  .pipeline-section{padding:40px 24px}
+  .pipeline-cards{grid-template-columns:1fr;gap:14px}
+
+  .presence-section{padding:40px 24px}
+  .presence-grid{grid-template-columns:repeat(2,1fr);gap:12px}
+
+  .cta-section{padding:0 24px}
+  .cta-links{gap:20px}
+
+  .footer-section{padding:40px 24px 24px}
+  .footer-inner{grid-template-columns:1fr;gap:28px}
+  .footer-bottom{flex-direction:column;text-align:center}
+}
+@media(max-width:420px){
+  .stats-grid,.stats-grid-2{grid-template-columns:repeat(3,1fr)}
+  .stat-number{font-size:clamp(1.8rem,8vw,2.4rem)}
+  .stat-card::after{display:none}
+  .presence-grid{grid-template-columns:repeat(2,1fr)}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav hero-visible" id="nav">
+  <a href="#" class="nav-logo">Edolf<span>.</span>Pharmacy</a>
+  <div class="nav-links">
+    <a href="#about">About</a>
+    <a href="#offerings">Offerings</a>
+    <a href="#pipeline">Pipeline</a>
+    <a href="#presence">Global</a>
+    <a href="#contact">Contact</a>
+  </div>
+  <div class="hamburger" id="hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#about" class="mobile-link">About</a>
+  <a href="#stats" class="mobile-link">Numbers</a>
+  <a href="#offerings" class="mobile-link">Offerings</a>
+  <a href="#pipeline" class="mobile-link">Pipeline</a>
+  <a href="#presence" class="mobile-link">Global Presence</a>
+  <a href="#contact" class="mobile-link">Contact</a>
+</div>
+
+<!-- DOT NAV -->
+<div class="dot-nav" id="dotNav">
+  <div class="dot active" data-section="hero" data-label="Home"></div>
+  <div class="dot" data-section="stats" data-label="Numbers"></div>
+  <div class="dot" data-section="about" data-label="About"></div>
+  <div class="dot" data-section="offerings" data-label="Offerings"></div>
+  <div class="dot" data-section="pipeline" data-label="Pipeline"></div>
+  <div class="dot" data-section="presence" data-label="Global"></div>
+  <div class="dot" data-section="contact" data-label="Contact"></div>
+</div>
+
+<!-- ===== HERO ===== -->
+<section class="section hero" id="hero">
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+  <div class="hero-inner">
+    <div class="hero-eyebrow">Caring for Life · From Illness to Wellness · Q4 FY26 Results · 22 May 2026</div>
+    <h1>From Care<br>to <em>Cure.</em></h1>
+    <p class="hero-sub">Developing and delivering high-quality medicines that improve patient outcomes across 74+ countries &mdash; from primary care essentials to breakthrough specialty therapies, GLP-1 metabolic platforms, biosimilars and women's health. Touching lives every minute, one prescription at a time.</p>
+    <div class="hero-cta">
+      <a href="#about" class="btn btn-primary">Discover Our Story</a>
+      <a href="#pipeline" class="btn btn-ghost">Explore Pipeline</a>
+    </div>
+  </div>
+  <div class="scroll-hint">
+    <div class="scroll-line"></div>
+    Scroll
+  </div>
+</section>
+
+<!-- ===== STATS ===== -->
+<section class="section stats-section" id="stats">
+  <div class="section-tag reveal">
+    <span>By the Numbers</span>
+  </div>
+  <div class="stats-grid">
+    <div class="stat-card reveal">
+      <div class="stat-number" data-target="74">0<span>+</span></div>
+      <div class="stat-label">Countries Served</div>
+    </div>
+    <div class="stat-card reveal reveal-delay-1">
+      <div class="stat-number" data-target="1800">0<span>+</span></div>
+      <div class="stat-label">Products Portfolio</div>
+    </div>
+    <div class="stat-card reveal reveal-delay-2">
+      <div class="stat-number" data-target="18">0</div>
+      <div class="stat-label">Manufacturing Sites</div>
+    </div>
+  </div>
+  <div class="stats-grid-2">
+    <div class="stat-card reveal">
+      <div class="stat-number" data-target="9400">0<span>+</span></div>
+      <div class="stat-label">Team Members</div>
+    </div>
+    <div class="stat-card reveal reveal-delay-1">
+      <div class="stat-number">$2.6<span>B</span></div>
+      <div class="stat-label">FY26 Revenue</div>
+    </div>
+    <div class="stat-card reveal reveal-delay-2">
+      <div class="stat-number" data-target="11">0<span>%</span></div>
+      <div class="stat-label">Revenue in R&amp;D</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ABOUT ===== -->
+<section class="section about-section" id="about">
+  <div class="about-inner">
+    <div class="section-tag reveal">About Edolf</div>
+    <h2 class="section-title reveal">Caring for Life,<br>One Patient at <em>a Time.</em></h2>
+    <p class="about-text reveal">Edolf Pharmacy is a fast-scaling global pharmaceutical company developing, manufacturing, and distributing medicines that meaningfully improve health outcomes &mdash; from chronic disease essentials to specialty therapies in oncology, dermatology, respiratory, women's health, and metabolic disorders. <em>Touching lives every minute</em> across six continents &mdash; one prescription at a time, with hope, strength and resilience.</p>
+    <div class="about-pills reveal">
+      <div class="about-pill"><span class="pill-icon"></span>USFDA Approved</div>
+      <div class="about-pill"><span class="pill-icon"></span>WHO-GMP Certified</div>
+      <div class="about-pill"><span class="pill-icon"></span>18 Manufacturing Sites</div>
+      <div class="about-pill"><span class="pill-icon"></span>EMA Compliant</div>
+      <div class="about-pill"><span class="pill-icon"></span>7.4M+ Patients Reached</div>
+      <div class="about-pill"><span class="pill-icon"></span>BREATHE. Think Edolf</div>
+      <div class="about-pill"><span class="pill-icon"></span>Top-10 Biosimilars Ambition</div>
+      <div class="about-pill"><span class="pill-icon"></span>GLP-1 &amp; Semaglutide Platform</div>
+      <div class="about-pill"><span class="pill-icon"></span>Q4 FY26 Results · 22 May 2026</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== OFFERINGS ===== -->
+<section class="section offerings-section" id="offerings">
+  <div class="offerings-inner">
+    <div class="offerings-header">
+      <div class="section-tag reveal">Our Offerings</div>
+      <h2 class="section-title reveal">Comprehensive <em>Solutions</em><br>Across the Value Chain.</h2>
+    </div>
+    <div class="offerings-grid">
+      <div class="offer-card reveal">
+        <span class="offer-emoji">💊</span>
+        <h3>Specialty Medicines</h3>
+        <p>Advanced therapies in oncology, dermatology, ophthalmology, and rare disease.</p>
+      </div>
+      <div class="offer-card reveal reveal-delay-1">
+        <span class="offer-emoji">🧬</span>
+        <h3>Generic Pharmaceuticals</h3>
+        <p>High-quality, affordable generics making essential medicines accessible globally.</p>
+      </div>
+      <div class="offer-card reveal reveal-delay-2">
+        <span class="offer-emoji">🌿</span>
+        <h3>Consumer Healthcare</h3>
+        <p>OTC products and wellness solutions for everyday health needs.</p>
+      </div>
+      <div class="offer-card reveal reveal-delay-1">
+        <span class="offer-emoji">🔬</span>
+        <h3>R&amp;D Innovation</h3>
+        <p>Next-generation formulations, biosimilars, and novel drug delivery systems.</p>
+      </div>
+      <div class="offer-card reveal reveal-delay-2">
+        <span class="offer-emoji">🏭</span>
+        <h3>Contract Manufacturing</h3>
+        <p>State-of-the-art USFDA, EMA and WHO-GMP approved CDMO solutions.</p>
+      </div>
+      <div class="offer-card reveal reveal-delay-3">
+        <span class="offer-emoji">🤝</span>
+        <h3>API &amp; Intermediates</h3>
+        <p>Vertically integrated supply chain producing active pharma ingredients.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PIPELINE ===== -->
+<section class="section pipeline-section" id="pipeline">
+  <div class="pipeline-inner">
+    <div class="pipeline-header">
+      <div class="section-tag reveal">Pipeline</div>
+      <h2 class="section-title reveal">Advancing <em>Breakthroughs</em><br>to Patients.</h2>
+    </div>
+    <div class="pipeline-cards">
+      <div class="pipe-card reveal">
+        <span class="pipe-tag">Metabolic</span>
+        <h3>EdoTirz&trade; Tirzepatide</h3>
+        <p>Once-weekly GLP-1/GIP dual agonist for type 2 diabetes &amp; chronic weight management &mdash; complementing our semaglutide programme.</p>
+        <div class="pipe-progress"><div class="pipe-progress-bar" data-width="82"></div></div>
+        <div class="pipe-stage"><span>Phase III</span><span>FY27</span></div>
+      </div>
+      <div class="pipe-card reveal reveal-delay-1">
+        <span class="pipe-tag">Oncology</span>
+        <h3>EdoMab-T&trade; Trastuzumab</h3>
+        <p>HER2-targeted biosimilar for breast and gastric cancers &mdash; anchor asset in our Top-10 global biosimilars ambition.</p>
+        <div class="pipe-progress"><div class="pipe-progress-bar" data-width="90"></div></div>
+        <div class="pipe-stage"><span>USFDA Filing</span><span>Q3 FY27</span></div>
+      </div>
+      <div class="pipe-card reveal reveal-delay-2">
+        <span class="pipe-tag">Respiratory</span>
+        <h3>EdoVent&trade; Albuterol HFA</h3>
+        <p>USFDA-approved generic albuterol inhaler for acute asthma rescue &mdash; commercial rollout underway across US specialty channels.</p>
+        <div class="pipe-progress"><div class="pipe-progress-bar" data-width="100"></div></div>
+        <div class="pipe-stage"><span>Launched</span><span>H1 FY27</span></div>
+      </div>
+      <div class="pipe-card reveal reveal-delay-3">
+        <span class="pipe-tag">Women's Health</span>
+        <h3>EdoCare-W&trade; Portfolio</h3>
+        <p>Contraception, menopause &amp; hormonal therapies live across 18 countries &mdash; scaling toward a top-3 global women's health franchise.</p>
+        <div class="pipe-progress"><div class="pipe-progress-bar" data-width="100"></div></div>
+        <div class="pipe-stage"><span>Live</span><span>FY26</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== GLOBAL PRESENCE ===== -->
+<section class="section presence-section" id="presence">
+  <div class="presence-inner">
+    <div class="presence-header">
+      <div class="section-tag reveal">Global Presence</div>
+      <h2 class="section-title reveal">Delivering Healthcare<br>Across <em>Continents.</em></h2>
+    </div>
+    <div class="presence-grid">
+      <div class="presence-card reveal"><span class="presence-flag">&#x1F1EE;&#x1F1F3;</span><h4>India</h4><span>HQ &middot; 6 Plants</span></div>
+      <div class="presence-card reveal reveal-delay-1"><span class="presence-flag">&#x1F1FA;&#x1F1F8;</span><h4>United States</h4><span>3 Facilities</span></div>
+      <div class="presence-card reveal reveal-delay-2"><span class="presence-flag">&#x1F1EC;&#x1F1E7;</span><h4>United Kingdom</h4><span>EU/UK Hub</span></div>
+      <div class="presence-card reveal reveal-delay-3"><span class="presence-flag">&#x1F1E7;&#x1F1F7;</span><h4>Brazil</h4><span>LATAM Ops</span></div>
+      <div class="presence-card reveal"><span class="presence-flag">&#x1F1FF;&#x1F1E6;</span><h4>South Africa</h4><span>Africa Regional</span></div>
+      <div class="presence-card reveal reveal-delay-1"><span class="presence-flag">&#x1F1E6;&#x1F1FA;</span><h4>Australia</h4><span>APAC Hub</span></div>
+      <div class="presence-card reveal reveal-delay-2"><span class="presence-flag">&#x1F1E9;&#x1F1EA;</span><h4>Germany</h4><span>EU R&amp;D Centre</span></div>
+      <div class="presence-card reveal reveal-delay-3"><span class="presence-flag">&#x1F1EF;&#x1F1F5;</span><h4>Japan</h4><span>Specialty Focus</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CTA / CONTACT ===== -->
+<section class="section cta-section" id="contact">
+  <div class="cta-inner">
+    <div class="section-tag reveal">Get in Touch</div>
+    <h2 class="section-title reveal">Partner With<br><em>Edolf Pharmacy.</em></h2>
+    <p class="cta-sub reveal">Whether you're a healthcare professional, distributor, investor, or research partner &mdash; let's create healthier futures together.</p>
+    <a href="mailto:info@edolfpharmacy.com" class="cta-btn reveal">Contact Us &rarr;</a>
+    <div class="cta-links reveal">
+      <a href="#">Investor Relations</a>
+      <a href="#">Q4 FY26 Results · 22 May 2026</a>
+      <a href="#">Careers</a>
+      <a href="#">Media Centre</a>
+      <a href="#">Pharmacovigilance</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer-section">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <h3>Edolf<span>.</span>Pharmacy</h3>
+      <p>Advancing healthcare through innovation, accessibility, and unwavering commitment to quality. Caring for life.</p>
+      <div class="footer-socials">
+        <a href="#" aria-label="LinkedIn">in</a>
+        <a href="#" aria-label="Twitter">&#x1D54F;</a>
+        <a href="#" aria-label="YouTube">&#x25B6;</a>
+        <a href="#" aria-label="Instagram">&#x25CE;</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <a href="#about">About Us</a>
+      <a href="#">Leadership</a>
+      <a href="#">Sustainability</a>
+      <a href="#">Careers</a>
+    </div>
+    <div class="footer-col">
+      <h4>Offerings</h4>
+      <a href="#offerings">Therapy Areas</a>
+      <a href="#offerings">Generics</a>
+      <a href="#offerings">Consumer Health</a>
+      <a href="#pipeline">R&amp;D Pipeline</a>
+    </div>
+    <div class="footer-col">
+      <h4>Connect</h4>
+      <a href="#">Investor Relations</a>
+      <a href="#">Media Centre</a>
+      <a href="#contact">Contact Us</a>
+      <a href="#">Privacy Policy</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; 2026 Edolf Pharmacy Ltd. All rights reserved. · Last refreshed 12 May 2026 · Q4 FY26 Results · 22 May 2026 · From Illness to Wellness, From Care to Cure.</span>
+    <span>Made with care for a healthier world.</span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  'use strict';
+
+  // ===== NAVBAR =====
+  const nav = document.getElementById('nav');
+  const heroSection = document.getElementById('hero');
+
+  const heroObs = new IntersectionObserver(([e]) => {
+    nav.classList.toggle('hero-visible', e.isIntersecting);
+    nav.classList.toggle('scrolled', !e.isIntersecting);
+  }, { threshold: 0.3 });
+  heroObs.observe(heroSection);
+
+  // ===== HAMBURGER =====
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobileMenu');
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('active');
+    mobileMenu.classList.toggle('open');
+  });
+  document.querySelectorAll('.mobile-link').forEach(link => {
+    link.addEventListener('click', () => {
+      hamburger.classList.remove('active');
+      mobileMenu.classList.remove('open');
+    });
+  });
+
+  // ===== REVEAL ON SCROLL =====
+  const revealObs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
+
+  // ===== DOT NAV =====
+  const dots = document.querySelectorAll('.dot-nav .dot');
+  const sectionIds = Array.from(dots).map(d => d.dataset.section);
+  const sections = sectionIds.map(id => document.getElementById(id)).filter(Boolean);
+
+  // Dot click
+  dots.forEach(dot => {
+    dot.addEventListener('click', () => {
+      const target = document.getElementById(dot.dataset.section);
+      if (target) target.scrollIntoView({ behavior: 'smooth' });
+    });
+  });
+
+  // Active dot tracking
+  const dotObs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        const id = e.target.id;
+        dots.forEach(d => d.classList.toggle('active', d.dataset.section === id));
+      }
+    });
+  }, { threshold: 0.4 });
+  sections.forEach(s => dotObs.observe(s));
+
+  // ===== COUNTER ANIMATION =====
+  const counters = document.querySelectorAll('.stat-number[data-target]');
+  const counted = new Set();
+  const counterObs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting && !counted.has(e.target)) {
+        counted.add(e.target);
+        const target = parseInt(e.target.dataset.target);
+        const suffix = e.target.innerHTML.includes('<span>') ?
+          e.target.querySelector('span').outerHTML : '';
+        const duration = 2000;
+        const start = performance.now();
+        function step(now) {
+          const elapsed = now - start;
+          const progress = Math.min(elapsed / duration, 1);
+          // Ease out cubic
+          const eased = 1 - Math.pow(1 - progress, 3);
+          const current = Math.round(eased * target);
+          e.target.innerHTML = current.toLocaleString() + suffix;
+          if (progress < 1) requestAnimationFrame(step);
+        }
+        requestAnimationFrame(step);
+      }
+    });
+  }, { threshold: 0.5 });
+  counters.forEach(c => counterObs.observe(c));
+
+  // ===== PIPELINE PROGRESS BARS =====
+  const bars = document.querySelectorAll('.pipe-progress-bar');
+  const barObs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.style.width = e.target.dataset.width + '%';
+      }
+    });
+  }, { threshold: 0.5 });
+  bars.forEach(b => {
+    b.style.width = '0%';
+    barObs.observe(b);
+  });
+
+  // ===== SMOOTH SCROLL FOR ANCHORS =====
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const href = a.getAttribute('href');
+      if (href.length <= 1) return;
+      e.preventDefault();
+      const t = document.querySelector(href);
+      if (t) t.scrollIntoView({ behavior: 'smooth' });
+    });
+  });
+
+})();
+</script>
+</body>
+</html>
